@@ -57,11 +57,17 @@ private extension MainCoordinatorImp {
 
     func runTabBarFlow(animated: Bool) {
 
+        // swiftlint:disable line_length
+
         guard
             let transactionCoordinator = resolver.resolve(TransactionsCoordinator.self, arguments: transactionsNavController, self as TransactionsCoordinatorOutput) else {
                 assertionFailure("Failed to resolve \(TransactionsCoordinator.self)")
                 return
         }
+
+        transactionsNavController.tabBarItem = UITabBarItem(title: .localized(.transactionsTabbarTitle),
+                                                            image: nil,
+                                                            selectedImage: nil)
 
         transactionCoordinator.start(animated: false)
         addDependency(transactionCoordinator)
@@ -71,6 +77,11 @@ private extension MainCoordinatorImp {
                 assertionFailure("Failed to resolve \(DashboardCoordinator.self)")
                 return
         }
+
+         // swiftlint:enable line_length
+        dashboardNavController.tabBarItem = UITabBarItem(title: .localized(.transactionsTabbarTitle),
+                                                         image: nil,
+                                                         selectedImage: nil)
 
         dashboardCoordinator.start(animated: false)
         addDependency(dashboardCoordinator)

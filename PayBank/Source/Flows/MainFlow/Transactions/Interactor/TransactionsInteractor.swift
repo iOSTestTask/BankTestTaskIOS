@@ -12,6 +12,8 @@ class TransactionsInteractor {
     // MARK: - Public properties
     weak var output: TransactionsInteractorOutput?
     var transactionAPIClient: APIClient<TransactionsAPI>!
+    weak var timeFormatter: TimeFormatterService!
+    weak var sortingService: SortingService!
 
     // MARK: - Private properties
     var transactions: [Transaction]?
@@ -22,8 +24,9 @@ extension TransactionsInteractor: TransactionsInteractorInput {
 
     func fetchTransactions() {
         getTransactions().done { [weak self] result in
-            self?.transactions = result
-            self?.output?.intercatorDidFetchTransaction(result)
+            let sorted = self?.sortingService.sort(result)
+            self?.transactions = sorted
+            self?.output?.intercatorDidFetchTransaction(sorted ?? [])
         }.catch { [weak self] error in
             if let serverError = error as? APIError {
                 switch serverError {
@@ -32,6 +35,10 @@ extension TransactionsInteractor: TransactionsInteractorInput {
                 }
             }
         }
+    }
+
+    func makeShortDateString(_ string: String?) -> String? {
+        return timeFormatter.makeShortString(from: string)
     }
 }
 

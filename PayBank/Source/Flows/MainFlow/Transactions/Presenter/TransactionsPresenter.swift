@@ -35,11 +35,12 @@ extension TransactionsPresenter: TransactionsViewOutput {
 extension TransactionsPresenter: TransactionsInteractorOutput {
 
     func intercatorDidFetchTransaction(_ transactions: [Transaction]) {
-        
+        let sectionsState = makeTransactionsSectionsState(transactions)
+        view.setup(sectionsState)
     }
 
     func interactorDidFailLoadTransaction(_ errorDescription: String) {
-
+        view.showOverNavigationBar(error: errorDescription)
     }
 }
 
@@ -49,7 +50,32 @@ private extension TransactionsPresenter {
                                                    tabbarTitle: .localized(.transactionsTabbarTitle))
     }
 
-    func makeTransactionsState( _ transactions: [Transaction]) {
+    func makeTransactionsSectionsState( _ transactions: [Transaction]) -> [TransactionsSectionState] {
+        var sectionsStates = [TransactionsSectionState]()
 
+        if transactions.isEmpty {
+            sectionsStates.append(.data(.emptyResult(makeNoResultsCellState())))
+        } else {
+            sectionsStates.append(.data(.transactions(makeTransactionsCellState(transactions))))
+        }
+
+        return sectionsStates
+    }
+
+    func makeTransactionsCellState(_ transactions: [Transaction]) -> [TransactionCellState] {
+        return transactions.map {
+            let date = interactor.makeShortDateString($0.date)
+            return TransactionCellState(id: $0.id,
+                                        account_id: $0.accountId,
+                                        amount: .localized(.transactionsAmount($0.amount ?? .localized(.noResultsInCell))),
+                                        vendor: .localized(.transactionsVendor($0.vendor ?? .localized(.noResultsInCell))),
+                                        category: .localized(.transactionsCategory($0.category ?? .localized(.noResultsInCell))),
+                                        date: .localized(.transactionsDate(date ?? .localized(.noResultsInCell)))
+            )
+        }
+    }
+
+    func makeNoResultsCellState() -> NoResultCellState {
+        return NoResultCellState(message: .localized(.noResults))
     }
 }

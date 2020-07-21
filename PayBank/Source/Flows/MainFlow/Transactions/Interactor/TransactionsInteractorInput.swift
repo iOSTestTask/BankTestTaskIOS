@@ -9,5 +9,8 @@
 import Foundation
 
 protocol TransactionsInteractorInput {
+
     func fetchTransactions()
+
+    func makeShortDateString(_ string: String?) -> String?
 }

@@ -37,18 +37,21 @@ final class TransactionRow: Row<TransactionCell>, RowType {
 
 // MARK: - TransactionCell
 final class TransactionCell: Cell<TransactionCellState>, CellType {
-
+    
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var vendorLabel: UILabel!
 
     override func setup() {
-        height = { 100.0 }
+        height = { 160.0 }
         super.setup()
     }
 
     override func update() {
-
+        amountLabel.text = row.value?.amount
+        categoryLabel.text = row.value?.category
+        dateLabel.text = row.value?.date
+        vendorLabel.text = row.value?.vendor
     }
 }

@@ -48,6 +48,9 @@ class TransactionsModuleAssembly: Assembly {
             let interactor = Interactor()
             interactor.output = presenter
             interactor.transactionAPIClient = apiClient
+            interactor.timeFormatter = resolver.resolve(TimeFormatterService.self)
+            interactor.sortingService = resolver.resolve(SortingService.self)
+            
             return interactor
         }
     }

@@ -21,5 +21,15 @@ final class ServicesAssembly: Assembly {
         container.register(APIClient<TransactionsAPI>.self) { resolver in
             APIClient()
         }
+
+        // time formatter
+        container.register(TimeFormatterService.self) { _ in
+            TimeFormatterServiceImp()
+        }.inObjectScope(.container)
+
+        // sorting
+        container.register(SortingService.self) { _ in
+            SortingServiceImp()
+        }.inObjectScope(.container)
     }
 }

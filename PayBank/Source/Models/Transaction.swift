@@ -23,7 +23,7 @@ struct Transaction: Codable {
 
     var category: String?
 
-    var data: String?
+    var date: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -31,7 +31,7 @@ struct Transaction: Codable {
         case amount
         case vendor
         case category
-        case data
+        case date
     }
 }
 
@@ -44,6 +44,6 @@ extension Transaction: Equatable {
             lhs.amount == rhs.amount &&
             lhs.category == rhs.category &&
             lhs.vendor == rhs.vendor &&
-            lhs.data == rhs.data
+            lhs.date == rhs.date
     }
 }

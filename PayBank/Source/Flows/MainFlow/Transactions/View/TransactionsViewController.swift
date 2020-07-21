@@ -9,13 +9,6 @@
 import UIKit
 import Eureka
 
-struct TransactionsViewControllerViewState {
-
-    var navigationTitle: String?
-
-    var tabbarTitle: String?
-}
-
 final class TransactionsViewController: FormViewController, StoryboardLoadable {
 
     var output: TransactionsViewOutput!
@@ -34,5 +27,47 @@ extension TransactionsViewController: TransactionsViewInput {
     func setupInitialState(_ viewState: TransactionsViewControllerViewState) {
         tabBarItem.title = viewState.tabbarTitle
         title = viewState.navigationTitle
+    }
+
+    func setup(_ sectionsState: [TransactionsSectionState]) {
+
+        form.removeAll()
+
+        for section in sectionsState {
+            switch section {
+            case .data(let sectionState):
+                let formSection = Section()
+
+                switch sectionState {
+                case .emptyResult(let cellState):
+                    addNoResultsRow(to: formSection, cellState)
+                case .transactions(let cellStates):
+                    addTransactionsRows(to: formSection, cellStates)
+                }
+
+                form.append(formSection)
+            }
+        }
+    }
+}
+
+// MARK: - Private
+private extension TransactionsViewController {
+
+    func addTransactionsRows(to section: Section, _ cellStates: [TransactionCellState]) {
+
+        cellStates.enumerated().forEach { (index, value) in
+            section
+                <<< TransactionRow(nil, { row in
+                    row.value = value
+                })
+        }
+    }
+
+    func addNoResultsRow(to section: Section, _ cellState: NoResultCellState) {
+        section
+            <<< NoResultRow(nil, { row in
+                row.value = cellState
+            })
     }
 }

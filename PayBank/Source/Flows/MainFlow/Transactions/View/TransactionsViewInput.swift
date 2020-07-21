@@ -8,6 +8,9 @@
 
 protocol TransactionsViewInput: class {
 
-    /// Setup initial state of the view
     func setupInitialState(_ viewState: TransactionsViewControllerViewState)
+
+    func setup(_ sectionsState: [TransactionsSectionState])
+
+    func showOverNavigationBar(error: String)
 }
