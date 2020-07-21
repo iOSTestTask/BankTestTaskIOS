@@ -45,6 +45,10 @@
 		9531C0A824C6F5DD00D7C672 /* UIViewController+Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0A724C6F5DD00D7C672 /* UIViewController+Messages.swift */; };
 		9531C0AA24C70AEC00D7C672 /* TimeFormatterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0A924C70AEC00D7C672 /* TimeFormatterService.swift */; };
 		9531C0AC24C70DDA00D7C672 /* SortingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0AB24C70DDA00D7C672 /* SortingService.swift */; };
+		9531C0AE24C7162500D7C672 /* DashboardStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0AD24C7162500D7C672 /* DashboardStates.swift */; };
+		9531C0B024C717C000D7C672 /* CashExpences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0AF24C717C000D7C672 /* CashExpences.swift */; };
+		9531C0B524C7298700D7C672 /* MontlyCashExpensesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0B324C7298700D7C672 /* MontlyCashExpensesCell.swift */; };
+		9531C0B624C7298700D7C672 /* MontlyCashExpensesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9531C0B424C7298700D7C672 /* MontlyCashExpensesCell.xib */; };
 		9535564824C56F0000E32D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535564724C56F0000E32D67 /* AppDelegate.swift */; };
 		9535564F24C56F0000E32D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535564D24C56F0000E32D67 /* Main.storyboard */; };
 		9535565124C56F0100E32D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9535565024C56F0100E32D67 /* Assets.xcassets */; };
@@ -149,6 +153,10 @@
 		9531C0A724C6F5DD00D7C672 /* UIViewController+Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Messages.swift"; sourceTree = "<group>"; };
 		9531C0A924C70AEC00D7C672 /* TimeFormatterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatterService.swift; sourceTree = "<group>"; };
 		9531C0AB24C70DDA00D7C672 /* SortingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingService.swift; sourceTree = "<group>"; };
+		9531C0AD24C7162500D7C672 /* DashboardStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardStates.swift; sourceTree = "<group>"; };
+		9531C0AF24C717C000D7C672 /* CashExpences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashExpences.swift; sourceTree = "<group>"; };
+		9531C0B324C7298700D7C672 /* MontlyCashExpensesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyCashExpensesCell.swift; sourceTree = "<group>"; };
+		9531C0B424C7298700D7C672 /* MontlyCashExpensesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MontlyCashExpensesCell.xib; sourceTree = "<group>"; };
 		9535564424C56F0000E32D67 /* PayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9535564724C56F0000E32D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9535564E24C56F0000E32D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -241,6 +249,7 @@
 		140460958C96C051189160D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9531C0B124C7295800D7C672 /* Cells */,
 				4EAE6C4C989916AF5794AE7D /* DashboardViewInput.swift */,
 				6FA5A52B6F4FB8176768DFBC /* DashboardViewOutput.swift */,
 				C705A1BDD0EEEBD426FEC2A7 /* DashboardViewController.swift */,
@@ -381,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				953A5F7A24C59C8100E3B438 /* DashboardCoordinator.swift */,
+				9531C0AD24C7162500D7C672 /* DashboardStates.swift */,
 				140460958C96C051189160D9 /* View */,
 				35687D98916FFF88A84C642D /* Presenter */,
 				DBE70DD28A42D5F061BAA6E0 /* Interactor */,
@@ -406,6 +416,23 @@
 				9531C0A224C6EFF100D7C672 /* NoResultsCell.xib */,
 			);
 			path = NoResultsCell;
+			sourceTree = "<group>";
+		};
+		9531C0B124C7295800D7C672 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9531C0B224C7296200D7C672 /* MontlyCashExpensesCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9531C0B224C7296200D7C672 /* MontlyCashExpensesCell */ = {
+			isa = PBXGroup;
+			children = (
+				9531C0B324C7298700D7C672 /* MontlyCashExpensesCell.swift */,
+				9531C0B424C7298700D7C672 /* MontlyCashExpensesCell.xib */,
+			);
+			path = MontlyCashExpensesCell;
 			sourceTree = "<group>";
 		};
 		9535563B24C56F0000E32D67 = {
@@ -644,6 +671,7 @@
 			isa = PBXGroup;
 			children = (
 				95D2EC6524C5F7220030FE5D /* Transaction.swift */,
+				9531C0AF24C717C000D7C672 /* CashExpences.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -838,6 +866,7 @@
 				9535565424C56F0100E32D67 /* LaunchScreen.storyboard in Resources */,
 				9535565124C56F0100E32D67 /* Assets.xcassets in Resources */,
 				95D2EC4724C5A87C0030FE5D /* SignInViewController.storyboard in Resources */,
+				9531C0B624C7298700D7C672 /* MontlyCashExpensesCell.xib in Resources */,
 				95D2EC6224C5F31D0030FE5D /* TransactionCell.xib in Resources */,
 				95D2EC4B24C5A8E10030FE5D /* TransactionsViewController.storyboard in Resources */,
 				95D2EC4924C5A89F0030FE5D /* SignUpViewController.storyboard in Resources */,
@@ -912,6 +941,7 @@
 				9535568424C573F200E32D67 /* CoordinatorsAssembly.swift in Sources */,
 				9535564824C56F0000E32D67 /* AppDelegate.swift in Sources */,
 				9535567E24C5738000E32D67 /* Coordinator.swift in Sources */,
+				9531C0AE24C7162500D7C672 /* DashboardStates.swift in Sources */,
 				9535568C24C57B3C00E32D67 /* MainCoordinator.swift in Sources */,
 				95D2EC5324C5CE3C0030FE5D /* APIError.swift in Sources */,
 				9535568A24C57B3300E32D67 /* AuthCoordinator.swift in Sources */,
@@ -930,6 +960,7 @@
 				3CA3682581506699456D9706 /* SignInRouterInput.swift in Sources */,
 				7CB1E58D7B8E201AC35D1FB9 /* SignInRouter.swift in Sources */,
 				2C4AA007F24857BF55C49C3A /* SignInAssembly.swift in Sources */,
+				9531C0B524C7298700D7C672 /* MontlyCashExpensesCell.swift in Sources */,
 				D9490F7B73A7CCB4CB42C3EC /* SignInLocalization.swift in Sources */,
 				95D2EC6624C5F7220030FE5D /* Transaction.swift in Sources */,
 				814BA4686B36E8E58CC81B01 /* SignUpViewInput.swift in Sources */,
@@ -964,6 +995,7 @@
 				50B1E496D7FE44EAF655483D /* TransactionsRouterInput.swift in Sources */,
 				9531C0A824C6F5DD00D7C672 /* UIViewController+Messages.swift in Sources */,
 				52FE29BAB9E1B7C089E89D7B /* TransactionsRouter.swift in Sources */,
+				9531C0B024C717C000D7C672 /* CashExpences.swift in Sources */,
 				95D2EC5C24C5D4190030FE5D /* TransactionsAPI.swift in Sources */,
 				C2CC021342F2E060DBCD594E /* TransactionsAssembly.swift in Sources */,
 				1C22DD631022A032C5971B42 /* TransactionsLocalization.swift in Sources */,

@@ -44,6 +44,6 @@ private extension DashboardCoordinatorImp {
                 return
         }
 
-        router.setRootModule(view, hideBar: true, animated: animated)
+        router.setRootModule(view, hideBar: false, animated: animated)
     }
 }

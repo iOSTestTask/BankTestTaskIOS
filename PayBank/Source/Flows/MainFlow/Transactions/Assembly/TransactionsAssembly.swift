@@ -50,7 +50,7 @@ class TransactionsModuleAssembly: Assembly {
             interactor.transactionAPIClient = apiClient
             interactor.timeFormatter = resolver.resolve(TimeFormatterService.self)
             interactor.sortingService = resolver.resolve(SortingService.self)
-            
+
             return interactor
         }
     }

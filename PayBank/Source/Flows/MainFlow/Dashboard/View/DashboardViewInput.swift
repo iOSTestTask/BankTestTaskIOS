@@ -8,6 +8,9 @@
 
 protocol DashboardViewInput: class {
 
-    /// Setup initial state of the view
-    func setupInitialState()
+    func setupInitialState(_ viewState: DashboardViewControllerViewState)
+
+    func setup(_ sectionsState: [DashboardDataSectionState])
+
+    func showOverNavigationBar(error: String)
 }

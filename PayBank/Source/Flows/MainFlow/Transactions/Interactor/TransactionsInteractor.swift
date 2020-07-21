@@ -24,7 +24,7 @@ extension TransactionsInteractor: TransactionsInteractorInput {
 
     func fetchTransactions() {
         getTransactions().done { [weak self] result in
-            let sorted = self?.sortingService.sort(result)
+            let sorted = self?.sortingService.sort(result, false)
             self?.transactions = sorted
             self?.output?.intercatorDidFetchTransaction(sorted ?? [])
         }.catch { [weak self] error in

@@ -10,7 +10,7 @@ import Foundation
 
 protocol SortingService: class {
 
-    func sort(_ transactions: [Transaction]) -> [Transaction]
+    func sort(_ transactions: [Transaction], _ assending: Bool) -> [Transaction]
 }
 
 // MARK: - SortingServiceImp
@@ -27,7 +27,12 @@ final class SortingServiceImp: NSObject {
 // MARK: - SortingService
 extension SortingServiceImp: SortingService {
 
-    func sort(_ transactions: [Transaction]) -> [Transaction] {
-        return transactions.sorted { dateFormatter.date(from: $0.date ?? "")! < dateFormatter.date(from: $1.date ?? "")! }
+    func sort(_ transactions: [Transaction], _ assending: Bool) -> [Transaction] {
+
+        if assending {
+            return transactions.sorted { dateFormatter.date(from: $0.date ?? "")! < dateFormatter.date(from: $1.date ?? "")! }
+        }
+
+        return transactions.sorted { dateFormatter.date(from: $0.date ?? "")! > dateFormatter.date(from: $1.date ?? "")! }
     }
 }

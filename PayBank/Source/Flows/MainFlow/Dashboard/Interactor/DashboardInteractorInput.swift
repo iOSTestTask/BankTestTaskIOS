@@ -8,4 +8,11 @@
 
 import Foundation
 
-protocol DashboardInteractorInput {}
+protocol DashboardInteractorInput {
+
+    func fetchCashExpenses()
+
+    func makeShortDateString(_ string: String?) -> String?
+
+    func makeShortString(_ date: Date?) -> String?
+}

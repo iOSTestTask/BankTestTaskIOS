@@ -79,7 +79,7 @@ private extension MainCoordinatorImp {
         }
 
          // swiftlint:enable line_length
-        dashboardNavController.tabBarItem = UITabBarItem(title: .localized(.transactionsTabbarTitle),
+        dashboardNavController.tabBarItem = UITabBarItem(title: .localized(.dashboardTabbarTitle),
                                                          image: nil,
                                                          selectedImage: nil)
 

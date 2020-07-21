@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MontlyCashExpensesCell" rowHeight="113" id="h7A-Va-8qv" customClass="MontlyCashExpensesCell" customModule="PayBank" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="454" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h7A-Va-8qv" id="oI7-EY-55c">
+                <rect key="frame" x="0.0" y="0.0" width="454" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BKv-32-Pmv">
+                        <rect key="frame" x="20" y="0.0" width="414" height="113"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OpS-ly-l56">
+                                <rect key="frame" x="0.0" y="0.0" width="213" height="113"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GCZ-oW-6Tp">
+                                <rect key="frame" x="221" y="0.0" width="193" height="113"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXb-w9-Xdp">
+                        <rect key="frame" x="0.0" y="112" width="454" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="AMl-xM-noE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BKv-32-Pmv" firstAttribute="leading" secondItem="oI7-EY-55c" secondAttribute="leading" constant="20" id="5Ku-hU-A6j"/>
+                    <constraint firstAttribute="trailing" secondItem="BKv-32-Pmv" secondAttribute="trailing" constant="20" id="EyQ-Hg-wkc"/>
+                    <constraint firstItem="BKv-32-Pmv" firstAttribute="top" secondItem="oI7-EY-55c" secondAttribute="top" id="VNY-FG-02U"/>
+                    <constraint firstAttribute="bottom" secondItem="BKv-32-Pmv" secondAttribute="bottom" id="Y4N-yp-L0f"/>
+                    <constraint firstAttribute="trailing" secondItem="sXb-w9-Xdp" secondAttribute="trailing" id="dBG-z2-mED"/>
+                    <constraint firstAttribute="bottom" secondItem="sXb-w9-Xdp" secondAttribute="bottom" id="lVe-Wr-Pad"/>
+                    <constraint firstItem="sXb-w9-Xdp" firstAttribute="leading" secondItem="oI7-EY-55c" secondAttribute="leading" id="n3K-l7-Qja"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="GCZ-oW-6Tp" id="fQc-or-q2P"/>
+                <outlet property="categoryLabel" destination="OpS-ly-l56" id="mt4-2h-Zsd"/>
+            </connections>
+            <point key="canvasLocation" x="31.884057971014496" y="-35.15625"/>
+        </tableViewCell>
+    </objects>
+</document>

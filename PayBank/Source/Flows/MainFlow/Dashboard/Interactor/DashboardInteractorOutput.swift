@@ -8,4 +8,9 @@
 
 import Foundation
 
-protocol DashboardInteractorOutput: class {}
+protocol DashboardInteractorOutput: class {
+
+    func intercatorDidFetchCashExpenses(_ cashExpencses: [MonthlyCashExpense])
+
+    func interactorDidFailLoadCashExpenses(_ errorDescription: String)
+}

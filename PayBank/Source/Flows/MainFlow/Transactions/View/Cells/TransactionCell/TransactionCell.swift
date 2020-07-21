@@ -37,7 +37,7 @@ final class TransactionRow: Row<TransactionCell>, RowType {
 
 // MARK: - TransactionCell
 final class TransactionCell: Cell<TransactionCellState>, CellType {
-    
+
     @IBOutlet private weak var amountLabel: UILabel!
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!

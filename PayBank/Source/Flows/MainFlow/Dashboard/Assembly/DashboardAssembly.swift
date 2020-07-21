@@ -38,9 +38,18 @@ class DashboardModuleAssembly: Assembly {
             return presenter
         }
 
-        container.register(Interactor.self) { (_, presenter: Presenter) in
+        container.register(Interactor.self) { (resolver, presenter: Presenter) in
+            guard
+                let apiClient = resolver.resolve(APIClient<TransactionsAPI>.self) else {
+                    fatalError("Can't resolve \(APIClient<TransactionsAPI>.self)")
+            }
+
             let interactor = Interactor()
             interactor.output = presenter
+            interactor.transactionAPIClient = apiClient
+            interactor.timeFormatter = resolver.resolve(TimeFormatterService.self)
+            interactor.sortingService = resolver.resolve(SortingService.self)
+
             return interactor
         }
     }
