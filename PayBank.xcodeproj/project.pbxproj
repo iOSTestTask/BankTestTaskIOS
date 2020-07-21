@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -52,6 +52,9 @@
 		9531C0BB24C735EB00D7C672 /* AuthentificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BA24C735EB00D7C672 /* AuthentificationAPI.swift */; };
 		9531C0BD24C7361C00D7C672 /* AuthenthificationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BC24C7361C00D7C672 /* AuthenthificationRequests.swift */; };
 		9531C0C024C73A8E00D7C672 /* SignInViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BF24C73A8E00D7C672 /* SignInViewState.swift */; };
+		9531C2F124C75BF700D7C672 /* StubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C2F024C75BF700D7C672 /* StubData.swift */; };
+		9531C2F324C75E9700D7C672 /* SignUpViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C2F224C75E9700D7C672 /* SignUpViewState.swift */; };
+		9531C2F524C761E100D7C672 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C2F424C761E100D7C672 /* Gender.swift */; };
 		9535564824C56F0000E32D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535564724C56F0000E32D67 /* AppDelegate.swift */; };
 		9535564F24C56F0000E32D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535564D24C56F0000E32D67 /* Main.storyboard */; };
 		9535565124C56F0100E32D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9535565024C56F0100E32D67 /* Assets.xcassets */; };
@@ -163,6 +166,9 @@
 		9531C0BA24C735EB00D7C672 /* AuthentificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationAPI.swift; sourceTree = "<group>"; };
 		9531C0BC24C7361C00D7C672 /* AuthenthificationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenthificationRequests.swift; sourceTree = "<group>"; };
 		9531C0BF24C73A8E00D7C672 /* SignInViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewState.swift; sourceTree = "<group>"; };
+		9531C2F024C75BF700D7C672 /* StubData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubData.swift; sourceTree = "<group>"; };
+		9531C2F224C75E9700D7C672 /* SignUpViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewState.swift; sourceTree = "<group>"; };
+		9531C2F424C761E100D7C672 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		9535564424C56F0000E32D67 /* PayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9535564724C56F0000E32D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9535564E24C56F0000E32D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -371,6 +377,7 @@
 				FCFEEB7949086C381AE206D9 /* Router */,
 				D523C804A3BF230ADB3D0447 /* Assembly */,
 				08A30411264299BA2FB4455A /* Localization */,
+				9531C2F224C75E9700D7C672 /* SignUpViewState.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -582,6 +589,7 @@
 				95D2EC4424C5A85C0030FE5D /* Localizable.swift */,
 				9531C09924C6E7AA00D7C672 /* Codable+Utils.swift */,
 				9531C09B24C6E93F00D7C672 /* Log.swift */,
+				9531C2F024C75BF700D7C672 /* StubData.swift */,
 				9531C0A724C6F5DD00D7C672 /* UIViewController+Messages.swift */,
 			);
 			path = Utils;
@@ -689,6 +697,7 @@
 			children = (
 				95D2EC6524C5F7220030FE5D /* Transaction.swift */,
 				9531C0AF24C717C000D7C672 /* CashExpences.swift */,
+				9531C2F424C761E100D7C672 /* Gender.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -831,6 +840,7 @@
 				9535564124C56F0000E32D67 /* Frameworks */,
 				9535564224C56F0000E32D67 /* Resources */,
 				9535565D24C5709F00E32D67 /* Validation */,
+				F8CCC8466AB4F6FAAE057E7F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -937,6 +947,23 @@
 			shellPath = /bin/sh;
 			shellScript = "cd \"${SRCROOT}/Source\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"${SRCROOT}/Scripts/ConfigurationFiles/SwiftLint/.swiftlint.yml\"\n";
 		};
+		F8CCC8466AB4F6FAAE057E7F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -974,6 +1001,7 @@
 				95D2EC4524C5A85C0030FE5D /* Localizable.swift in Sources */,
 				72A2E5AF8FDAE2C12974E732 /* SignInInteractorOutput.swift in Sources */,
 				D60D5EBB6C18CC2250E5B10C /* SignInInteractor.swift in Sources */,
+				9531C2F524C761E100D7C672 /* Gender.swift in Sources */,
 				3CA3682581506699456D9706 /* SignInRouterInput.swift in Sources */,
 				7CB1E58D7B8E201AC35D1FB9 /* SignInRouter.swift in Sources */,
 				2C4AA007F24857BF55C49C3A /* SignInAssembly.swift in Sources */,
@@ -1010,6 +1038,7 @@
 				9316DF822A2E4C777F725450 /* TransactionsInteractorInput.swift in Sources */,
 				AA817206BDCD1F22AFFF9C21 /* TransactionsInteractorOutput.swift in Sources */,
 				69D8754CF053A624F7421E2A /* TransactionsInteractor.swift in Sources */,
+				9531C2F124C75BF700D7C672 /* StubData.swift in Sources */,
 				50B1E496D7FE44EAF655483D /* TransactionsRouterInput.swift in Sources */,
 				9531C0A824C6F5DD00D7C672 /* UIViewController+Messages.swift in Sources */,
 				52FE29BAB9E1B7C089E89D7B /* TransactionsRouter.swift in Sources */,
@@ -1029,6 +1058,7 @@
 				95D2EC6024C5EDC80030FE5D /* TransactionCell.swift in Sources */,
 				B04BBE313A92F06CA6189CDE /* DashboardInteractorOutput.swift in Sources */,
 				481594AFE0C601AACDCE39D4 /* DashboardInteractor.swift in Sources */,
+				9531C2F324C75E9700D7C672 /* SignUpViewState.swift in Sources */,
 				7B69246AA40174E309CB4C13 /* DashboardRouterInput.swift in Sources */,
 				807D3309B09211EFF926E5FF /* DashboardRouter.swift in Sources */,
 				9531C0BB24C735EB00D7C672 /* AuthentificationAPI.swift in Sources */,

@@ -8,6 +8,7 @@ target 'PayBank' do
 
   # Stuff
   pod 'Swinject', '2.7.1'
+  pod 'CocoaDebug', :configurations => ['Debug']
 
   # Networking
   pod 'Alamofire', '5.1.0'

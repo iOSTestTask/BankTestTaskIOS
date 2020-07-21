@@ -31,7 +31,7 @@ extension SignInViewController: SignInViewInput {
 
         onSignInTap = viewState.onSignInTap
         onSignUpTap = viewState.onSignUpTap
-        
+
         setupForm(viewState)
     }
 }
@@ -44,7 +44,10 @@ private extension SignInViewController {
             $0.add(rule: RuleRequired())
             $0.add(rule: RuleEmail())
             $0.validationOptions = .validatesOnDemand
-            $0.value = "Nadiah.Spoel@example.com"
+
+            #if DEBUG
+                $0.value = StubData.email
+            #endif
         }.cellUpdate { cell, row in
             if !row.isValid {
                 cell.titleLabel?.textColor = .red
@@ -76,7 +79,9 @@ private extension SignInViewController {
             $0.title = viewState.paswordRow
             $0.add(rule: RuleRequired())
             $0.add(rule: RuleMinLength(minLength: 6))
-            $0.value = "springs"
+            #if DEBUG
+                $0.value = StubData.password
+            #endif
             $0.validationOptions = .validatesOnDemand
         }.cellUpdate { cell, row in
             if !row.isValid {

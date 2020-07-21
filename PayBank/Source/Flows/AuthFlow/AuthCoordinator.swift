@@ -25,7 +25,8 @@ final class AuthCoordinatorImp: BaseCoordinator {
 
     // MARK: - Coordinator
     override func start(animated: Bool) {
-        runSignInModule(animated)
+        runSignUpFlow(animated: animated)
+        // runSignInModule(animated)
     }
 }
 
@@ -40,6 +41,13 @@ extension AuthCoordinatorImp: SignInModuleOutput {
 }
 
 extension AuthCoordinatorImp: SignUpModuleOutput {
+    func signUpModuleDidTapClose() {
+        router.dismissModule()
+    }
+
+    func signInModuleDidSignUp() {
+        output.finishAuthFlow(self)
+    }
 }
 
 // MARK: - Private

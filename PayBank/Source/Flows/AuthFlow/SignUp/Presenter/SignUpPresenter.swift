@@ -6,6 +6,7 @@
 //  Copyright © 2020 NIX. All rights reserved.
 //
 
+import Foundation
 class SignUpPresenter {
 
     weak var view: SignUpViewInput!
@@ -21,9 +22,78 @@ extension SignUpPresenter: SignUpModuleInput {}
 extension SignUpPresenter: SignUpViewOutput {
 
     func viewIsReady() {
-        view.setupInitialState()
+
+        let initionlaViewState = makeInitionalViewState()
+        view.setupInitialState(initionlaViewState)
+    }
+
+    func viewDidEndFillingEmail(_ email: String?) {
+        interactor.updateEmail(email)
+    }
+
+    func viewDidEndFillingPassword(_ password: String?) {
+        interactor.updatePassword(password)
+    }
+
+    func viewDidEndFillingFirstName(_ firstName: String?) {
+        interactor.updateFirstName(firstName)
+    }
+
+    func viewDidEndFillingLastName(_ lastName: String?) {
+        interactor.updateLastName(lastName)
+    }
+
+    func viewDidEndFillingPhoneNumber(_ phoneNumber: String?) {
+        interactor.updatePhone(phoneNumber)
+    }
+
+    func viewDidEndFillingDate(_ date: Date?) {
+        interactor.updateDateOfBirth(date)
+    }
+
+    func viewDidFillingGender(_ gender: Gender) {
+        interactor.updateGender(gender)
     }
 }
 
 // MARK: - SignUpInteractorOutput
-extension SignUpPresenter: SignUpInteractorOutput {}
+extension SignUpPresenter: SignUpInteractorOutput {
+
+    func interactorDidSignUp() {
+        output.signInModuleDidSignUp()
+    }
+
+    func interactorDidFailSignUp(_ errorDescription: String) {
+        view.showOverNavigationBar(error: errorDescription)
+    }
+}
+
+// MARK: - View States
+private extension SignUpPresenter {
+    func makeInitionalViewState() -> SignUpViewControllerViewState {
+
+        return SignUpViewControllerViewState(emailRow: .localized(.signUpEmailTitle),
+                                             paswordRow: .localized(.signUpPasswordTitle),
+                                             firstNameRow: .localized(.signUpFirstNameTitle),
+                                             lastNameRow: .localized(.signUpLastNameTitle),
+                                             phoneRow: .localized(.signUpPhoneTitle),
+                                             dateOfBirth: .localized(.signUpDateOfBirthTitle),
+                                             genderTitle: .localized(.signUpGenderTitle),
+                                             closeButtonTitle: .localized(.closeInButtonTitle),
+                                             signUpButtonTitle: .localized(.signUpButtonTitle),
+                                             onSignUpTap: onSignUpTap,
+                                             onCloseTap: onCloseTap)
+    }
+}
+
+// MARK: - Actions
+private extension SignUpPresenter {
+    func onCloseTap() {
+        output.signUpModuleDidTapClose()
+    }
+
+    func onSignUpTap() {
+        // FIXME: add real validation
+        interactor.signUp()
+    }
+}

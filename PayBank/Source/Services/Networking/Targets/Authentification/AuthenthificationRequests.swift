@@ -13,3 +13,19 @@ struct LoginRequest: Encodable {
 
     let password: String
 }
+
+struct SignUpRequest: Encodable {
+    let email: String
+
+    let password: String
+
+    let firstName: String
+
+    let lastName: String
+
+    let phone: String?
+
+    let dob: TimeInterval?
+
+    let gender: String?
+}

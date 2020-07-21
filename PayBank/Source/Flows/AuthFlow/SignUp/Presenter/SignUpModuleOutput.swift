@@ -6,4 +6,8 @@
 //  Copyright © 2020 NIX. All rights reserved.
 //
 
-protocol SignUpModuleOutput: class {}
+protocol SignUpModuleOutput: class {
+    func signUpModuleDidTapClose()
+
+    func signInModuleDidSignUp()
+}

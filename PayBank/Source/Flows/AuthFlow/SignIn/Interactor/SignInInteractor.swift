@@ -14,8 +14,8 @@ class SignInInteractor {
     var apiClient: APIClient<AuthentificationAPI>!
 
     // MARK: - Private properties
-    private var email: String? = "Nadiah.Spoel@example.com"
-    private var password: String? = "springs"
+    private var email: String?
+    private var password: String?
 }
 
 // MARK: - SignInInteractorInput
@@ -29,6 +29,11 @@ extension SignInInteractor: SignInInteractorInput {
     }
 
     func login() {
+
+        #if DEBUG
+            email = StubData.email
+            password = StubData.password
+        #endif
 
         // FIXME: add real validation
         guard

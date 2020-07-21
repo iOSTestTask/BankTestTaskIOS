@@ -8,4 +8,21 @@
 
 import Foundation
 
-protocol SignUpInteractorInput {}
+protocol SignUpInteractorInput {
+
+    func updateEmail(_ email: String?)
+
+    func updatePassword(_ password: String?)
+
+    func updateFirstName(_ firstName: String?)
+
+    func updateLastName(_ lastName: String?)
+
+    func updatePhone(_ phone: String?)
+
+    func updateDateOfBirth(_ date: Date?)
+
+    func updateGender(_ gender: Gender)
+
+    func signUp()
+}

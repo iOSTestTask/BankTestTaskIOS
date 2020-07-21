@@ -48,6 +48,7 @@ extension SignInPresenter: SignInInteractorOutput {
     }
 }
 
+// MARK: - View States
 private extension SignInPresenter {
     func makeInitionalViewState() -> SignInViewControllerViewState {
 
@@ -60,6 +61,7 @@ private extension SignInPresenter {
     }
 }
 
+// MARK: - Actions
 private extension SignInPresenter {
     func onSignInTap() {
         //FIXME: add real validation and make sign in only if it avaliable

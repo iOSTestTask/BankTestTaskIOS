@@ -14,9 +14,24 @@
                     <view key="view" contentMode="scaleToFill" id="OgS-sN-9EQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ltk-wI-A5D">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ltk-wI-A5D" firstAttribute="top" secondItem="YE1-pT-IVn" secondAttribute="top" id="cpA-0E-HoJ"/>
+                            <constraint firstItem="YE1-pT-IVn" firstAttribute="bottom" secondItem="ltk-wI-A5D" secondAttribute="bottom" id="hnM-se-mhz"/>
+                            <constraint firstItem="ltk-wI-A5D" firstAttribute="leading" secondItem="YE1-pT-IVn" secondAttribute="leading" id="miP-Qb-FZk"/>
+                            <constraint firstItem="YE1-pT-IVn" firstAttribute="trailing" secondItem="ltk-wI-A5D" secondAttribute="trailing" id="wqQ-MX-Z8i"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="YE1-pT-IVn"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ltk-wI-A5D" id="KVl-po-3N2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctj-Xf-QoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

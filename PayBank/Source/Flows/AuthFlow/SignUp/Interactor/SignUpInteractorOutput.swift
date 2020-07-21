@@ -8,4 +8,9 @@
 
 import Foundation
 
-protocol SignUpInteractorOutput: class {}
+protocol SignUpInteractorOutput: class {
+
+    func interactorDidSignUp()
+
+    func interactorDidFailSignUp(_ errorDescription: String)
+}
