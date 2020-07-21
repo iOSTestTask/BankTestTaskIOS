@@ -1,0 +1,47 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Swinject
+
+class {{ module_info.name }}ModuleAssembly: Assembly {
+    typealias View = {{ module_info.name }}ViewController
+    typealias Interactor = {{ module_info.name }}Interactor
+    typealias Presenter = {{ module_info.name }}Presenter
+    typealias Router = {{ module_info.name }}Router
+    typealias ModuleOutput = {{ module_info.name }}ModuleOutput
+
+    func assemble(container: Container) {
+        container.register(Router.self) { resolver in
+            let router = Router()
+            router.modulesResolver = resolver
+            return router
+        }
+
+        container.register(View.self) { (resolver, output: ModuleOutput) in
+            let viewController = View.loadFromStoryboard()
+            viewController.output = resolver.resolve(Presenter.self, arguments: viewController, output)
+            return viewController
+        }
+
+        container.register(Presenter.self) { (resolver, viewController: View, output: ModuleOutput) in
+            let presenter = Presenter()
+            presenter.view = viewController
+            presenter.router = resolver.resolve(Router.self)
+            presenter.interactor = resolver.resolve(Interactor.self, argument: presenter)
+            presenter.output = output
+            return presenter
+        }
+
+        container.register(Interactor.self) { (_, presenter: Presenter) in
+            let interactor = Interactor()
+            interactor.output = presenter
+            return interactor
+        }
+    }
+}
