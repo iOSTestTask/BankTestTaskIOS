@@ -8,6 +8,9 @@
 
 protocol SignInViewOutput {
 
-    /// Notify presenter that view is ready
     func viewIsReady()
+
+    func viewDidEndFillingEmail(_ email: String?)
+
+    func viewDidEndFillingPassword(_ password: String?)
 }

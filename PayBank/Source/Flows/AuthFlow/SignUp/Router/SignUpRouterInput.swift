@@ -8,4 +8,5 @@
 
 import Foundation
 
-protocol SignUpRouterInput {}
+protocol SignUpRouterInput {
+}

@@ -22,6 +22,9 @@ final class ServicesAssembly: Assembly {
             APIClient()
         }
 
+        container.register(APIClient<AuthentificationAPI>.self) { resolver in
+            APIClient()
+        }
         // time formatter
         container.register(TimeFormatterService.self) { _ in
             TimeFormatterServiceImp()

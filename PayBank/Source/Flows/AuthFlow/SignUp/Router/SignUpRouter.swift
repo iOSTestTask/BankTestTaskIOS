@@ -14,4 +14,5 @@ class SignUpRouter {
 }
 
 // MARK: - SignUpRouterInput
-extension SignUpRouter: SignUpRouterInput {}
+extension SignUpRouter: SignUpRouterInput {
+}

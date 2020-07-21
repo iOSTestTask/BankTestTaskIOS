@@ -26,6 +26,6 @@ extension LaunchServiceImp: LaunchService {
 
     // FIXME: implement logic
     func resolveLaunchMode() -> LaunchMode {
-        return .main
+        return .auth
     }
 }

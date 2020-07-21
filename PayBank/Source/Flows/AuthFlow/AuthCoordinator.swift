@@ -25,17 +25,45 @@ final class AuthCoordinatorImp: BaseCoordinator {
 
     // MARK: - Coordinator
     override func start(animated: Bool) {
-        runLoginFlow(animated: animated)
+        runSignInModule(animated)
     }
+}
+
+extension AuthCoordinatorImp: SignInModuleOutput {
+    func signInModuleDidTapOnSignUp() {
+        runSignUpFlow(animated: true)
+    }
+
+    func signInModuleDidLogin() {
+        output.finishAuthFlow(self)
+    }
+}
+
+extension AuthCoordinatorImp: SignUpModuleOutput {
 }
 
 // MARK: - Private
 private extension AuthCoordinatorImp {
-    func runLoginFlow(animated: Bool) {
 
+
+    func runSignInModule(_ animated: Bool) {
+        guard
+            let view = resolver.resolve((SignInViewController).self, argument: self as SignInModuleOutput) else {
+                assertionFailure("Failed to resolve \(SignInViewController.self) and \(SignInModuleOutput.self)")
+                return
+        }
+
+        router.setRootModule(view, hideBar: true, animated: animated)
     }
 
-    func runSignInFlow(animated: Bool) {
+    func runSignUpFlow(animated: Bool) {
 
+        guard
+             let view = resolver.resolve((SignUpViewController).self, argument: self as SignUpModuleOutput) else {
+                 assertionFailure("Failed to resolve \(SignUpViewController.self) and \(SignUpModuleOutput.self)")
+                 return
+         }
+
+        router.present(view, animated: animated, completion: nil)
     }
 }

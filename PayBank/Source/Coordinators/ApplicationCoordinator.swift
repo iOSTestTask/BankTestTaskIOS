@@ -28,6 +28,7 @@ final class ApplicationCoordinatorImp: BaseCoordinator {
 extension ApplicationCoordinatorImp: AuthCoordinatorOutput {
     func finishAuthFlow(_ coordinator: AuthCoordinator) {
         removeDependency(coordinator)
+        runMainFlow(false)
     }
 }
 

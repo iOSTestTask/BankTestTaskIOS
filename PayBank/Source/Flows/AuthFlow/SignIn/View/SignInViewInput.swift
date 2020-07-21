@@ -8,6 +8,7 @@
 
 protocol SignInViewInput: class {
 
-    /// Setup initial state of the view
-    func setupInitialState()
+    func setupInitialState(_ viewState: SignInViewControllerViewState)
+
+    func showOverNavigationBar(error: String)
 }

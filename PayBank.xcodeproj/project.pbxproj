@@ -49,6 +49,9 @@
 		9531C0B024C717C000D7C672 /* CashExpences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0AF24C717C000D7C672 /* CashExpences.swift */; };
 		9531C0B524C7298700D7C672 /* MontlyCashExpensesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0B324C7298700D7C672 /* MontlyCashExpensesCell.swift */; };
 		9531C0B624C7298700D7C672 /* MontlyCashExpensesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9531C0B424C7298700D7C672 /* MontlyCashExpensesCell.xib */; };
+		9531C0BB24C735EB00D7C672 /* AuthentificationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BA24C735EB00D7C672 /* AuthentificationAPI.swift */; };
+		9531C0BD24C7361C00D7C672 /* AuthenthificationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BC24C7361C00D7C672 /* AuthenthificationRequests.swift */; };
+		9531C0C024C73A8E00D7C672 /* SignInViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C0BF24C73A8E00D7C672 /* SignInViewState.swift */; };
 		9535564824C56F0000E32D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535564724C56F0000E32D67 /* AppDelegate.swift */; };
 		9535564F24C56F0000E32D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535564D24C56F0000E32D67 /* Main.storyboard */; };
 		9535565124C56F0100E32D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9535565024C56F0100E32D67 /* Assets.xcassets */; };
@@ -157,6 +160,9 @@
 		9531C0AF24C717C000D7C672 /* CashExpences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashExpences.swift; sourceTree = "<group>"; };
 		9531C0B324C7298700D7C672 /* MontlyCashExpensesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontlyCashExpensesCell.swift; sourceTree = "<group>"; };
 		9531C0B424C7298700D7C672 /* MontlyCashExpensesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MontlyCashExpensesCell.xib; sourceTree = "<group>"; };
+		9531C0BA24C735EB00D7C672 /* AuthentificationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationAPI.swift; sourceTree = "<group>"; };
+		9531C0BC24C7361C00D7C672 /* AuthenthificationRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenthificationRequests.swift; sourceTree = "<group>"; };
+		9531C0BF24C73A8E00D7C672 /* SignInViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewState.swift; sourceTree = "<group>"; };
 		9535564424C56F0000E32D67 /* PayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9535564724C56F0000E32D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9535564E24C56F0000E32D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -286,6 +292,7 @@
 				62E75C6893C22A5FAB0220DE /* Router */,
 				BF44C95900CAA84936CB4168 /* Assembly */,
 				1D6AB5E50228433271A202F4 /* Localization */,
+				9531C0BF24C73A8E00D7C672 /* SignInViewState.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -435,6 +442,15 @@
 			path = MontlyCashExpensesCell;
 			sourceTree = "<group>";
 		};
+		9531C0B924C735CE00D7C672 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				9531C0BA24C735EB00D7C672 /* AuthentificationAPI.swift */,
+				9531C0BC24C7361C00D7C672 /* AuthenthificationRequests.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
 		9535563B24C56F0000E32D67 = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +483,7 @@
 		9535565E24C5712300E32D67 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				9535566824C5725500E32D67 /* AppDelegate */,
 				95D2EC6424C5F7140030FE5D /* Models */,
 				9535567924C5733300E32D67 /* Services */,
 				9535566E24C5728A00E32D67 /* Coordinators */,
@@ -474,7 +491,6 @@
 				9535566C24C5727C00E32D67 /* Navigation */,
 				9535566B24C5727500E32D67 /* Shared */,
 				9535566924C5726B00E32D67 /* Stuff */,
-				9535566824C5725500E32D67 /* AppDelegate */,
 				9535566524C5723700E32D67 /* Flows */,
 			);
 			path = Source;
@@ -636,6 +652,7 @@
 		95D2EC4F24C5CDF90030FE5D /* Targets */ = {
 			isa = PBXGroup;
 			children = (
+				9531C0B924C735CE00D7C672 /* Authentification */,
 				95D2EC5A24C5D3FC0030FE5D /* Transactions */,
 				95D2EC5824C5CF8E0030FE5D /* TargetTypeExtension.swift */,
 			);
@@ -973,6 +990,7 @@
 				95D2EC5724C5CE600030FE5D /* APIDomain.swift in Sources */,
 				95D2EC5524C5CE4E0030FE5D /* APIResult.swift in Sources */,
 				9531C09A24C6E7AA00D7C672 /* Codable+Utils.swift in Sources */,
+				9531C0C024C73A8E00D7C672 /* SignInViewState.swift in Sources */,
 				8EEF0CDA7997BAE8202C0DEC /* SignUpInteractorInput.swift in Sources */,
 				BBFC4B922850A4963BD99FB5 /* SignUpInteractorOutput.swift in Sources */,
 				BBCD00EB787CD1F10AF3A444 /* SignUpInteractor.swift in Sources */,
@@ -1004,6 +1022,7 @@
 				127909A5FC70EA5A41288B80 /* DashboardViewController.swift in Sources */,
 				95D2EC5924C5CF8E0030FE5D /* TargetTypeExtension.swift in Sources */,
 				AC1BB1B36E29415F24E74A66 /* DashboardModuleInput.swift in Sources */,
+				9531C0BD24C7361C00D7C672 /* AuthenthificationRequests.swift in Sources */,
 				4511BB34BB79F2A330597856 /* DashboardModuleOutput.swift in Sources */,
 				B789058CE4829B21B9DAAF09 /* DashboardPresenter.swift in Sources */,
 				969CBB08D35C226C1A7E4B88 /* DashboardInteractorInput.swift in Sources */,
@@ -1012,6 +1031,7 @@
 				481594AFE0C601AACDCE39D4 /* DashboardInteractor.swift in Sources */,
 				7B69246AA40174E309CB4C13 /* DashboardRouterInput.swift in Sources */,
 				807D3309B09211EFF926E5FF /* DashboardRouter.swift in Sources */,
+				9531C0BB24C735EB00D7C672 /* AuthentificationAPI.swift in Sources */,
 				40DAEBDB2DAA768F9ABFC4E7 /* DashboardAssembly.swift in Sources */,
 				323BEE10F3436D3E0C301B33 /* DashboardLocalization.swift in Sources */,
 			);
