@@ -64,9 +64,5 @@ enum APIError: LocalizedError {
         let apiCustomError = try? APICustomError.decode(from: response.data)
         let identifier = apiCustomError?.message
         self = .custom(statusCode: statusCode, identifier: identifier)
-
-        // FIXME: add parse error status code
     }
-
-    // FIXME: add localization
 }

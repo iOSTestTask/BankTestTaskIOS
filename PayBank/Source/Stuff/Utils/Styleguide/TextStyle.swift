@@ -10,16 +10,7 @@ import UIKit
 
 struct TextStyle {
 
-    // FIXME: add color to style
     let font: UIFont
-}
-
-func * (style: TextStyle, alpha: Alpha) -> TextStyle {
-    TextStyle(font: style.font)
-}
-
-func + (style: TextStyle, color: UIColor) -> TextStyle {
-    TextStyle(font: style.font)
 }
 
 // MARK: - Styles

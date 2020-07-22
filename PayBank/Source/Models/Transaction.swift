@@ -10,7 +10,7 @@ import Foundation
 
 typealias Transactions = [Transaction]
 
-struct Transaction: Codable {
+struct Transaction: Codable, Equatable {
 
     var id: Int?
 
@@ -23,17 +23,4 @@ struct Transaction: Codable {
     var category: String?
 
     var date: String?
-}
-
-// MARK: - Equatable
-extension Transaction: Equatable {
-    static func == (lhs: Transaction, rhs: Transaction) -> Bool {
-        return
-            lhs.id == rhs.id &&
-            lhs.accountId == rhs.accountId &&
-            lhs.amount == rhs.amount &&
-            lhs.category == rhs.category &&
-            lhs.vendor == rhs.vendor &&
-            lhs.date == rhs.date
-    }
 }

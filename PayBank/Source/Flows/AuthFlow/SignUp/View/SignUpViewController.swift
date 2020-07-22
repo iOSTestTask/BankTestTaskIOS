@@ -64,7 +64,6 @@ private extension SignUpViewController {
     }
 
     // FIXME: Add custom cells and setup them with cell state
-    // FIXME: Replace validation rows with inline row
     func addEmailRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
         let emailRow = EmailRow() {
             $0.title = viewState.emailRow

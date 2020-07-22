@@ -24,7 +24,6 @@ final class LaunchServiceImp {
 // MARK: - LaunchService
 extension LaunchServiceImp: LaunchService {
 
-    // FIXME: return the appropriate launch mode depending on stored session in KeyChain if needed
     func resolveLaunchMode() -> LaunchMode {
         return .auth
     }

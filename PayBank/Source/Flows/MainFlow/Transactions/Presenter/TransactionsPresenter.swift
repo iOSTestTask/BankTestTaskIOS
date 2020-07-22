@@ -31,7 +31,6 @@ extension TransactionsPresenter: TransactionsViewOutput {
     }
 
     func viewOnLogoutTappedAction() {
-        // FIXME: add logout on server
         output.transactionsModuleDidLogout()
     }
 }

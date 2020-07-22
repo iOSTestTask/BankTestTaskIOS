@@ -15,7 +15,6 @@ enum APIDomain: String {
         case api = "127.0.0.1"
         case port = ":3000"
     #else
-        // FIXME: replace with localhost (due to system problems on local machine)
         case api = "127.0.0.1"
         case port = ":3000"
     #endif

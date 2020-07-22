@@ -95,7 +95,6 @@ private extension SignUpPresenter {
     }
 
     func onSignUpTap() {
-        // FIXME: add real validation
         interactor.signUp()
     }
 }
