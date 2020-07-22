@@ -44,9 +44,14 @@ final class TransactionCell: Cell<TransactionCellState>, CellType {
     @IBOutlet private weak var vendorLabel: UILabel!
 
     override func setup() {
+
         height = { 160.0 }
 
-        // FIXME: add style for ui element
+        amountLabel.applyTextStyle(.body)
+        categoryLabel.applyTextStyle(.body)
+        dateLabel.applyTextStyle(.body)
+        vendorLabel.applyTextStyle(.body)
+
         super.setup()
     }
 

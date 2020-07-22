@@ -9,23 +9,21 @@
 import UIKit
 
 struct TextStyle {
-    
+
+    // FIXME: add color to style
     let font: UIFont
-    let color: UIColor
 }
 
 func * (style: TextStyle, alpha: Alpha) -> TextStyle {
-    TextStyle(font: style.font, color: style.color * alpha)
+    TextStyle(font: style.font)
 }
 
 func + (style: TextStyle, color: UIColor) -> TextStyle {
-    TextStyle(font: style.font, color: color)
+    TextStyle(font: style.font)
 }
 
 // MARK: - Styles
 extension TextStyle {
 
-    static let title = TextStyle(font: UIFont.preferredFont(forTextStyle: .headline), color: .black)
-    static let subtitle = TextStyle(font: UIFont.preferredFont(forTextStyle: .subheadline), color: .black)
-    static let input = TextStyle(font: UIFont.preferredFont(forTextStyle: .body), color: .black)
+    static let body = TextStyle(font: UIFont.preferredFont(forTextStyle: .body))
 }

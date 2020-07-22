@@ -17,6 +17,7 @@
 		323BEE10F3436D3E0C301B33 /* DashboardLocalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE141D92A4D1D66D411EB1 /* DashboardLocalization.swift */; };
 		39693E3BDA5975B365327B0C /* TransactionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB62FE1582986702E4E019 /* TransactionsPresenter.swift */; };
 		3CA3682581506699456D9706 /* SignInRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F68B9C5A6CC92181293E687 /* SignInRouterInput.swift */; };
+		3E5B2E83E0FD71B44FD4D5DE /* Pods_PayBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F2056D821E7B2931A01B3B /* Pods_PayBank.framework */; };
 		40DAEBDB2DAA768F9ABFC4E7 /* DashboardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0CD2AED289070D85FF052C /* DashboardAssembly.swift */; };
 		4511BB34BB79F2A330597856 /* DashboardModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA69BFD5D0D604DDB02E4B /* DashboardModuleOutput.swift */; };
 		481594AFE0C601AACDCE39D4 /* DashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FEBD042692D1C01C6279B6 /* DashboardInteractor.swift */; };
@@ -100,7 +101,6 @@
 		AA817206BDCD1F22AFFF9C21 /* TransactionsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7899A8011E33A8E37D369B /* TransactionsInteractorOutput.swift */; };
 		AC1BB1B36E29415F24E74A66 /* DashboardModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454EC973644B806D35650CCB /* DashboardModuleInput.swift */; };
 		B04BBE313A92F06CA6189CDE /* DashboardInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2399CE7AD0678C3D4E85FEFA /* DashboardInteractorOutput.swift */; };
-		B27B8C0F3D1CCBDF2E4CB130 /* libPods-PayBank.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1FA466472ECB987A82C07B4 /* libPods-PayBank.a */; };
 		B789058CE4829B21B9DAAF09 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5FC0208613419BF7B49EE4 /* DashboardPresenter.swift */; };
 		B9D301144449E6FBEA3BD6C6 /* SignInModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B58EBCEDEF0F068B467874B /* SignInModuleInput.swift */; };
 		BBCD00EB787CD1F10AF3A444 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D66D43FBBFC5D8416543579 /* SignUpInteractor.swift */; };
@@ -133,6 +133,7 @@
 		1F68B9C5A6CC92181293E687 /* SignInRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignInRouterInput.swift; sourceTree = "<group>"; };
 		2178D5ABDCD73F625E2CB939 /* SignUpViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignUpViewOutput.swift; sourceTree = "<group>"; };
 		2399CE7AD0678C3D4E85FEFA /* DashboardInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardInteractorOutput.swift; sourceTree = "<group>"; };
+		24F2056D821E7B2931A01B3B /* Pods_PayBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29DB3ACDA133AC54164C77FF /* TransactionsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionsInteractorInput.swift; sourceTree = "<group>"; };
 		2A0CD2AED289070D85FF052C /* DashboardAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardAssembly.swift; sourceTree = "<group>"; };
 		2D5E8676A3D8F8A5AD0E33B0 /* SignInViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignInViewOutput.swift; sourceTree = "<group>"; };
@@ -218,7 +219,6 @@
 		96FEBD042692D1C01C6279B6 /* DashboardInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardInteractor.swift; sourceTree = "<group>"; };
 		9C7899A8011E33A8E37D369B /* TransactionsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionsInteractorOutput.swift; sourceTree = "<group>"; };
 		9FEA69BFD5D0D604DDB02E4B /* DashboardModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DashboardModuleOutput.swift; sourceTree = "<group>"; };
-		A1FA466472ECB987A82C07B4 /* libPods-PayBank.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PayBank.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000178E10A9FC6EFB1CEBD /* TransactionsModuleOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionsModuleOutput.swift; sourceTree = "<group>"; };
 		AD50C9F8048BCF441AD2C266 /* TransactionsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionsViewOutput.swift; sourceTree = "<group>"; };
 		AF32E2A8DDD96497653955A4 /* SignUpViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27B8C0F3D1CCBDF2E4CB130 /* libPods-PayBank.a in Frameworks */,
+				3E5B2E83E0FD71B44FD4D5DE /* Pods_PayBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +355,7 @@
 		658639FC96FAEA072F6B893D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1FA466472ECB987A82C07B4 /* libPods-PayBank.a */,
+				24F2056D821E7B2931A01B3B /* Pods_PayBank.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -863,7 +863,7 @@
 				9535564124C56F0000E32D67 /* Frameworks */,
 				9535564224C56F0000E32D67 /* Resources */,
 				9535565D24C5709F00E32D67 /* Validation */,
-				F8CCC8466AB4F6FAAE057E7F /* [CP] Copy Pods Resources */,
+				924229E66A452CD9FB1D8205 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -952,6 +952,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		924229E66A452CD9FB1D8205 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9535565D24C5709F00E32D67 /* Validation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -969,23 +986,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd \"${SRCROOT}/Source\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"${SRCROOT}/Scripts/ConfigurationFiles/SwiftLint/.swiftlint.yml\"\n";
-		};
-		F8CCC8466AB4F6FAAE057E7F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayBank/Pods-PayBank-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 

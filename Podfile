@@ -1,6 +1,9 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+inhibit_all_warnings!
+use_frameworks!
+
 target 'PayBank' do
   # Development
   pod 'SwiftLint', '0.25.1'
@@ -8,7 +11,6 @@ target 'PayBank' do
 
   # Stuff
   pod 'Swinject', '2.7.1'
-  pod 'CocoaDebug', :configurations => ['Debug']
 
   # Networking
   pod 'Moya', '14.0.0'

@@ -15,7 +15,6 @@ protocol TextStyling {
 extension UILabel: TextStyling {
 
     func applyTextStyle(_ style: TextStyle) {
-        textColor = style.color
         font = style.font
     }
 }

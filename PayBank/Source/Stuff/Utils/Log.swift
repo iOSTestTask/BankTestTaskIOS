@@ -8,10 +8,6 @@
 
 import UIKit
 
-#if DEBUG
-import CocoaDebug
-#endif
-
 struct Log {
 
     enum Tag: String {
@@ -37,25 +33,7 @@ struct Log {
 
     static func log(_ message: String, tag: Tag = .general, color: UIColor) {
         #if DEBUG
-        swiftLog(#file, #function, #line, "[" + tag.rawValue + "] " + message, color, false)
+        print("\(#file) \(#function) \(#line) [\(tag.rawValue)] \(message)")
         #endif
     }
 }
-
-// MARK: - Shake gesture
-#if DEBUG
-var cocoaDebugIsEnabled = false
-
-extension UIWindow {
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        guard
-            motion == .motionShake,
-            !cocoaDebugIsEnabled else {
-            return
-        }
-
-        CocoaDebug.enable()
-        cocoaDebugIsEnabled = true
-    }
-}
-#endif
