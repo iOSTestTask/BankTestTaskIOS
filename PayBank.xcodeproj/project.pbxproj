@@ -79,9 +79,9 @@
 		9535568824C5751200E32D67 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 9535568724C5751200E32D67 /* Scripts */; };
 		9535568A24C57B3300E32D67 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535568924C57B3300E32D67 /* AuthCoordinator.swift */; };
 		9535568C24C57B3C00E32D67 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535568B24C57B3C00E32D67 /* MainCoordinator.swift */; };
-		953A5F7624C59A0A00E3B438 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 953A5F7524C59A0A00E3B438 /* Readme.md */; };
 		953A5F7924C59B6C00E3B438 /* TransactionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A5F7824C59B6C00E3B438 /* TransactionsCoordinator.swift */; };
 		953A5F7B24C59C8100E3B438 /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953A5F7A24C59C8100E3B438 /* DashboardCoordinator.swift */; };
+		954B44FD24C8C3B000A8E996 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 954B44FC24C8C3B000A8E996 /* Readme.md */; };
 		95D2EC4524C5A85C0030FE5D /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2EC4424C5A85C0030FE5D /* Localizable.swift */; };
 		95D2EC4724C5A87C0030FE5D /* SignInViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D2EC4624C5A87C0030FE5D /* SignInViewController.storyboard */; };
 		95D2EC4924C5A89F0030FE5D /* SignUpViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D2EC4824C5A89F0030FE5D /* SignUpViewController.storyboard */; };
@@ -201,9 +201,9 @@
 		9535568724C5751200E32D67 /* Scripts */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Scripts; sourceTree = SOURCE_ROOT; };
 		9535568924C57B3300E32D67 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		9535568B24C57B3C00E32D67 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		953A5F7524C59A0A00E3B438 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		953A5F7824C59B6C00E3B438 /* TransactionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCoordinator.swift; sourceTree = "<group>"; };
 		953A5F7A24C59C8100E3B438 /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		954B44FC24C8C3B000A8E996 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		95D2EC4424C5A85C0030FE5D /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		95D2EC4624C5A87C0030FE5D /* SignInViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInViewController.storyboard; sourceTree = "<group>"; };
 		95D2EC4824C5A89F0030FE5D /* SignUpViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpViewController.storyboard; sourceTree = "<group>"; };
@@ -483,6 +483,7 @@
 		9535563B24C56F0000E32D67 = {
 			isa = PBXGroup;
 			children = (
+				954B44FC24C8C3B000A8E996 /* Readme.md */,
 				9535564624C56F0000E32D67 /* PayBank */,
 				9535564524C56F0000E32D67 /* Products */,
 				C730D20884094B4094D13293 /* Pods */,
@@ -501,7 +502,6 @@
 		9535564624C56F0000E32D67 /* PayBank */ = {
 			isa = PBXGroup;
 			children = (
-				953A5F7524C59A0A00E3B438 /* Readme.md */,
 				9535568724C5751200E32D67 /* Scripts */,
 				9535565F24C5714000E32D67 /* Resources */,
 				9535565E24C5712300E32D67 /* Source */,
@@ -915,9 +915,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				953A5F7624C59A0A00E3B438 /* Readme.md in Resources */,
 				9535565424C56F0100E32D67 /* LaunchScreen.storyboard in Resources */,
 				9535565124C56F0100E32D67 /* Assets.xcassets in Resources */,
+				954B44FD24C8C3B000A8E996 /* Readme.md in Resources */,
 				95D2EC4724C5A87C0030FE5D /* SignInViewController.storyboard in Resources */,
 				9531C0B624C7298700D7C672 /* MontlyCashExpensesCell.xib in Resources */,
 				95D2EC6224C5F31D0030FE5D /* TransactionCell.xib in Resources */,
