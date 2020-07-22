@@ -80,7 +80,7 @@ private extension SignUpViewController {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
-                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                for (index, validationMsg) in row.validationErrors.map(\.msg).enumerated() {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
@@ -111,7 +111,7 @@ private extension SignUpViewController {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
-                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                for (index, validationMsg) in row.validationErrors.map(\.msg).enumerated() {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
@@ -141,7 +141,7 @@ private extension SignUpViewController {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
-                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                for (index, validationMsg) in row.validationErrors.map(\.msg).enumerated() {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
@@ -171,7 +171,7 @@ private extension SignUpViewController {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
-                for (index, validationMsg) in row.validationErrors.map({ $0.msg }).enumerated() {
+                for (index, validationMsg) in row.validationErrors.map(\.msg).enumerated() {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }

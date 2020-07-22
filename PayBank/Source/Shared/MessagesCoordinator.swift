@@ -77,7 +77,7 @@ private extension MessagesCoordinator {
 
         SwiftMessages.show(config: config, view: view)
     }
-    
+
     static func hide() {
         SwiftMessages.hide()
     }

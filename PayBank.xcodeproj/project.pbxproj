@@ -61,6 +61,7 @@
 		9531C2FE24C8411100D7C672 /* Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C2FD24C8411100D7C672 /* Alpha.swift */; };
 		9531C30024C8415300D7C672 /* TextStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C2FF24C8415300D7C672 /* TextStyling.swift */; };
 		9531C30224C841F600D7C672 /* UIColor+Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C30124C841F600D7C672 /* UIColor+Design.swift */; };
+		9531C30424C8679200D7C672 /* Sequences+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C30324C8679200D7C672 /* Sequences+Utils.swift */; };
 		9535564824C56F0000E32D67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535564724C56F0000E32D67 /* AppDelegate.swift */; };
 		9535564F24C56F0000E32D67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9535564D24C56F0000E32D67 /* Main.storyboard */; };
 		9535565124C56F0100E32D67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9535565024C56F0100E32D67 /* Assets.xcassets */; };
@@ -180,6 +181,7 @@
 		9531C2FD24C8411100D7C672 /* Alpha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alpha.swift; sourceTree = "<group>"; };
 		9531C2FF24C8415300D7C672 /* TextStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStyling.swift; sourceTree = "<group>"; };
 		9531C30124C841F600D7C672 /* UIColor+Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Design.swift"; sourceTree = "<group>"; };
+		9531C30324C8679200D7C672 /* Sequences+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequences+Utils.swift"; sourceTree = "<group>"; };
 		9535564424C56F0000E32D67 /* PayBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9535564724C56F0000E32D67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9535564E24C56F0000E32D67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -613,6 +615,7 @@
 				9531C2F024C75BF700D7C672 /* StubData.swift */,
 				9531C0A724C6F5DD00D7C672 /* UIViewController+Messages.swift */,
 				9531C30124C841F600D7C672 /* UIColor+Design.swift */,
+				9531C30324C8679200D7C672 /* Sequences+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1023,6 +1026,7 @@
 				D58D0D45436EA6C7B85159C8 /* SignInInteractorInput.swift in Sources */,
 				95D2EC4524C5A85C0030FE5D /* Localizable.swift in Sources */,
 				9531C2F824C8330800D7C672 /* MessagesCoordinator.swift in Sources */,
+				9531C30424C8679200D7C672 /* Sequences+Utils.swift in Sources */,
 				72A2E5AF8FDAE2C12974E732 /* SignInInteractorOutput.swift in Sources */,
 				D60D5EBB6C18CC2250E5B10C /* SignInInteractor.swift in Sources */,
 				9531C2F524C761E100D7C672 /* Gender.swift in Sources */,
