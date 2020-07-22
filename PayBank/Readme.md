@@ -23,7 +23,7 @@ more info [here](https://github.com/rambler-digital-solutions/Generamba).
 We use pattern to manage app flows. The Coordinator is main responsibility is to handle all the logic for presentation between View Controllers. More detail you could find [here](https://medium.com/blacklane-engineering/coordinators-essential-tutorial-part-i-376c836e9ba7)
 
 
-You could see our arhitecture solutions [here](https://drive.google.com/file/d/1jBeDIRoB8_tX7t_TKhlHZUKvX6sfvCbB/view?usp=sharing)
+You could see our arhitecture solutions [here](https://drive.google.com/file/d/1AfnIwSbimrPXOjed2HV6hLbDYZ3KdGDQ/view?usp=sharing) and navigation arhitecture [here](https://drive.google.com/file/d/1dfDNj7WEjwdOWw975ik_mCuA_idgDSf7/view?usp=sharing)
 
 We use [Swinject](https://github.com/Swinject) to manage DI.
 
