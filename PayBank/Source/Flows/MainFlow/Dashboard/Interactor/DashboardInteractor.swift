@@ -75,7 +75,7 @@ private extension DashboardInteractor {
     func groupTransactionsByCategory(_ transactions: [Transaction]) -> [CashExpense] {
 
         var cashExpences = [CashExpense]()
-        let categories = Dictionary(grouping: transactions, by: { $0.category } )
+        let categories = Dictionary(grouping: transactions, by: { $0.category })
 
         for key in categories.keys {
              guard

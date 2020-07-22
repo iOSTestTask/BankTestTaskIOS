@@ -24,6 +24,10 @@ struct SignUpViewControllerViewState {
 
     var genderTitle: String?
 
+    var genderOptions: [String]?
+
+    var genderDefaultOption: String?
+
     var closeButtonTitle: String?
 
     var signUpButtonTitle: String?

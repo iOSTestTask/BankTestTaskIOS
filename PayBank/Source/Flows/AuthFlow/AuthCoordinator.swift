@@ -25,8 +25,7 @@ final class AuthCoordinatorImp: BaseCoordinator {
 
     // MARK: - Coordinator
     override func start(animated: Bool) {
-        runSignUpFlow(animated: animated)
-        // runSignInModule(animated)
+         runSignInModule(animated)
     }
 }
 
@@ -52,7 +51,6 @@ extension AuthCoordinatorImp: SignUpModuleOutput {
 
 // MARK: - Private
 private extension AuthCoordinatorImp {
-
 
     func runSignInModule(_ animated: Bool) {
         guard

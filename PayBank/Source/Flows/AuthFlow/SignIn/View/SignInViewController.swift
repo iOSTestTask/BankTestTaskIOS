@@ -54,7 +54,7 @@ private extension SignInViewController {
             }
         }.onRowValidationChanged {[weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
@@ -89,7 +89,7 @@ private extension SignInViewController {
             }
         }.onRowValidationChanged { [weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {

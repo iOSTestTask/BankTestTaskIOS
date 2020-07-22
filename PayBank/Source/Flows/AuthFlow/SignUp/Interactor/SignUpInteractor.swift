@@ -9,6 +9,7 @@
 import Foundation
 import PromiseKit
 
+// swiftlint:disable four_spaces
 class SignUpInteractor {
 
     weak var output: SignUpInteractorOutput?
@@ -86,7 +87,6 @@ extension SignUpInteractor: SignUpInteractorInput {
         }
     }
 }
-
 
 // MARK: - Networking
 private extension SignUpInteractor {

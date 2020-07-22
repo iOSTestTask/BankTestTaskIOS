@@ -34,7 +34,6 @@ extension DashboardViewController: DashboardViewInput {
 
         for section in sectionsState {
 
-
             switch section {
             case .emptyResult(let cellState):
                 let formSection = Section()

@@ -15,8 +15,8 @@ import CocoaDebug
 struct Log {
 
     enum Tag: String {
-        case general = "general"
-        case network = "network"
+        case general
+        case network
     }
 
     static func debug(_ message: String, tag: Tag = .general) {

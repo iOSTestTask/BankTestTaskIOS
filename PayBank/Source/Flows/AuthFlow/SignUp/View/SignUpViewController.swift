@@ -20,6 +20,7 @@ final class SignUpViewController: FormViewController, StoryboardLoadable {
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         output.viewIsReady()
     }
 }
@@ -35,6 +36,8 @@ extension SignUpViewController: SignUpViewInput {
     }
 }
 
+// MARK: - Private
+// MARK: - Fill form
 private extension SignUpViewController {
     func addEmailRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
         let emailRow = EmailRow() {
@@ -52,7 +55,7 @@ private extension SignUpViewController {
             }
         }.onRowValidationChanged {[weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
@@ -87,7 +90,7 @@ private extension SignUpViewController {
             }
         }.onRowValidationChanged { [weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
@@ -121,7 +124,7 @@ private extension SignUpViewController {
             }
         }.onRowValidationChanged { [weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
@@ -155,7 +158,7 @@ private extension SignUpViewController {
             }
         }.onRowValidationChanged { [weak self] cell, row in
             let rowIndex = row.indexPath!.row
-            while row.section!.count > rowIndex + 1 && row.section?[rowIndex  + 1] is LabelRow {
+            while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
             }
             if !row.isValid {
@@ -207,6 +210,24 @@ private extension SignUpViewController {
         section.append(phoneRow)
     }
 
+    func addGenderRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
+        let genderRow = SegmentedRow<String>(viewState.genderTitle) {
+            $0.options = viewState.genderOptions
+            #if DEBUG
+                $0.value = StubData.gender.rawValue
+            #else
+                $0.value = viewState.genderDefaultOption
+            #endif
+
+        }.onCellSelection { (cell, row) in
+            if let value = row.value, let gender = Gender.init(rawValue: value) {
+                self.output.viewDidFillingGender(gender)
+            }
+        }
+
+        section.append(genderRow)
+    }
+
     func addSinUpRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
         let signInRow = ButtonRow() {
             $0.title = viewState.signUpButtonTitle
@@ -237,5 +258,22 @@ private extension SignUpViewController {
     }
 
     func setupForm(_ viewState: SignUpViewControllerViewState) {
+        let requiredFieldsSection = Section()
+
+        addEmailRow(to: requiredFieldsSection, viewState)
+        addPasswordRow(to: requiredFieldsSection, viewState)
+        addFirstNameRow(to: requiredFieldsSection, viewState)
+        addLastNameRow(to: requiredFieldsSection, viewState)
+
+        let nonRequiredFieldsSection = Section()
+        addPhoneNameRow(to: nonRequiredFieldsSection, viewState)
+        addDateRow(to: nonRequiredFieldsSection, viewState)
+        addGenderRow(to: nonRequiredFieldsSection, viewState)
+
+        let buttonsSections = Section()
+        addSinUpRow(to: buttonsSections, viewState)
+        addCloseRow(to: buttonsSections, viewState)
+
+        form.append(contentsOf: [requiredFieldsSection, nonRequiredFieldsSection, buttonsSections])
     }
 }

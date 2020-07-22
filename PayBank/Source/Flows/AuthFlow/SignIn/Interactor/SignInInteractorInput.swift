@@ -11,7 +11,7 @@ import Foundation
 protocol SignInInteractorInput {
 
     func updateEmail(_ email: String?)
-    
+
     func updatePassword(_ password: String?)
 
     func login()

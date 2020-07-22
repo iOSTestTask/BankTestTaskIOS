@@ -79,6 +79,8 @@ private extension SignUpPresenter {
                                              phoneRow: .localized(.signUpPhoneTitle),
                                              dateOfBirth: .localized(.signUpDateOfBirthTitle),
                                              genderTitle: .localized(.signUpGenderTitle),
+                                             genderOptions: [Gender.female.rawValue, Gender.male.rawValue, Gender.unknown.rawValue],
+                                             genderDefaultOption: Gender.unknown.rawValue,
                                              closeButtonTitle: .localized(.closeInButtonTitle),
                                              signUpButtonTitle: .localized(.signUpButtonTitle),
                                              onSignUpTap: onSignUpTap,

@@ -46,7 +46,7 @@ extension Localizable {
     }
 
     static var closeInButtonTitle: Localizable {
-        Localizable(NSLocalizedString("Close",
+        Localizable(NSLocalizedString("CLOSE",
                                       comment: "SignUP | Close | "))
     }
 }

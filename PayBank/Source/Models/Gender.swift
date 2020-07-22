@@ -8,11 +8,11 @@
 
 import Foundation
 
-enum Gender: String {
+enum Gender: String, CaseIterable {
 
-    case unknown = "unknown"
+    case unknown = "Unknown"
 
-    case female = "female"
+    case female = "Female"
 
-    case male = "male"
+    case male = "Male"
 }

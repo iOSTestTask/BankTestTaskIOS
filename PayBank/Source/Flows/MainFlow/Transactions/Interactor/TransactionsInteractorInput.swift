@@ -14,4 +14,3 @@ protocol TransactionsInteractorInput {
 
     func makeShortDateString(_ string: String?) -> String?
 }
-

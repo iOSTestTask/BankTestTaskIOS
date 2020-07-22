@@ -20,7 +20,7 @@ extension Localizable {
     }
 
     static var dashboardUnknownCategoryKey: Localizable {
-        Localizable(NSLocalizedString("unknown",
-                                             comment: "Dashboard | Category | Unknown"))
+        Localizable(NSLocalizedString("Unknown",
+                                      comment: "Dashboard | Category | Unknown"))
     }
 }

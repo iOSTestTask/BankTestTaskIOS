@@ -9,6 +9,7 @@
 import UIKit
 import Swinject
 
+// swiftlint:disable four_spaces
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -38,9 +38,17 @@ class SignUpModuleAssembly: Assembly {
             return presenter
         }
 
-        container.register(Interactor.self) { (_, presenter: Presenter) in
+        container.register(Interactor.self) { (resolver, presenter: Presenter) in
+
+            guard
+                let apiClient = resolver.resolve(APIClient<AuthentificationAPI>.self) else {
+                    fatalError("Can't resolve \(APIClient<AuthentificationAPI>.self)")
+            }
+
             let interactor = Interactor()
             interactor.output = presenter
+            interactor.apiClient = apiClient
+
             return interactor
         }
     }

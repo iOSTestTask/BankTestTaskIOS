@@ -24,7 +24,7 @@ final class CoordinatorsAssembly: Assembly {
             coordinator.router = resolver.resolve(Router.self, argument: rootController)
             coordinator.coordinatorResolver = resolver
             coordinator.launchService = resolver.resolve(LaunchService.self)!
-            
+
             return coordinator
         }.inObjectScope(.container)
 
@@ -46,6 +46,7 @@ final class CoordinatorsAssembly: Assembly {
             return coordinator
         }
 
+        // swiftlint:disable line_length
         // transactions
         container.register(TransactionsCoordinator.self) { (resolver, rootController: UINavigationController, output: TransactionsCoordinatorOutput) in
             let coordinator = TransactionsCoordinatorImp()
@@ -54,6 +55,7 @@ final class CoordinatorsAssembly: Assembly {
             coordinator.output = output
             return coordinator
         }
+        // swiftlint:enable line_length
 
         // dashboard
         container.register(DashboardCoordinator.self) { (resolver, rootController: UINavigationController, output: DashboardCoordinatorOutput) in

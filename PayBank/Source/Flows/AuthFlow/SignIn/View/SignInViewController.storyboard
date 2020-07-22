@@ -15,15 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="27" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FS5-yx-Sv0">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="27" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FS5-yx-Sv0">
+                                <rect key="frame" x="0.0" y="303" width="414" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="ELP-3S-64w"/>
+                                </constraints>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="FS5-yx-Sv0" firstAttribute="top" secondItem="JTN-dy-dyA" secondAttribute="top" id="7fM-7j-py9"/>
-                            <constraint firstItem="JTN-dy-dyA" firstAttribute="bottom" secondItem="FS5-yx-Sv0" secondAttribute="bottom" id="rS8-HH-M50"/>
+                            <constraint firstItem="FS5-yx-Sv0" firstAttribute="centerY" secondItem="JTN-dy-dyA" secondAttribute="centerY" id="lah-KJ-ML3"/>
                             <constraint firstItem="FS5-yx-Sv0" firstAttribute="leading" secondItem="JTN-dy-dyA" secondAttribute="leading" id="wXg-16-bXN"/>
                             <constraint firstItem="JTN-dy-dyA" firstAttribute="trailing" secondItem="FS5-yx-Sv0" secondAttribute="trailing" id="wpw-5l-hun"/>
                         </constraints>
