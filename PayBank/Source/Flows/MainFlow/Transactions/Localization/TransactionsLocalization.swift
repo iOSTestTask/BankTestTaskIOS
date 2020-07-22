@@ -38,4 +38,9 @@ extension Localizable {
         Localizable(NSLocalizedString("Category: %@",
                                       comment: "Transactions | Cell | Category"), category)
     }
+
+    static var transactionsLogoutButtonTitle: Localizable {
+        Localizable(NSLocalizedString("Logout",
+                                      comment: "Transactions | Logout | "))
+    }
 }

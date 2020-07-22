@@ -13,6 +13,8 @@ struct TransactionsViewControllerViewState {
     var navigationTitle: String?
 
     var tabbarTitle: String?
+
+    var logoutButtonTitle: String?
 }
 
 enum TransactionsSectionState {

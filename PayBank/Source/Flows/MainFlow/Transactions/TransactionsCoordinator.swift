@@ -12,6 +12,8 @@ import Swinject
 protocol TransactionsCoordinatorOutput: class {
 
     func finishTransactionsFlow(_ coordinator: TransactionsCoordinator)
+
+    func transactionCoordinatorDidLogout(_ coordinator: TransactionsCoordinator)
 }
 
 typealias TransactionsCoordinator = Coordinator
@@ -30,6 +32,9 @@ final class TransactionsCoordinatorImp: BaseCoordinator {
 }
 
 extension TransactionsCoordinatorImp: TransactionsModuleOutput {
+    func transactionsModuleDidLogout() {
+        output.transactionCoordinatorDidLogout(self)
+    }
 }
 
 // MARK: - Private

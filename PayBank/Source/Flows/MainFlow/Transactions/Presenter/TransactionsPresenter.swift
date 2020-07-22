@@ -29,6 +29,11 @@ extension TransactionsPresenter: TransactionsViewOutput {
         // fetch data
         interactor.fetchTransactions()
     }
+
+    func viewOnLogoutTappedAction() {
+        // FIXME: add logout on server
+        output.transactionsModuleDidLogout()
+    }
 }
 
 // MARK: - TransactionsInteractorOutput
@@ -47,7 +52,8 @@ extension TransactionsPresenter: TransactionsInteractorOutput {
 private extension TransactionsPresenter {
     func makeViewInitionalState() -> TransactionsViewControllerViewState {
         return TransactionsViewControllerViewState(navigationTitle: .localized(.transactionsNavigationTitle),
-                                                   tabbarTitle: .localized(.transactionsTabbarTitle))
+                                                   tabbarTitle: .localized(.transactionsTabbarTitle),
+                                                   logoutButtonTitle: .localized(.transactionsLogoutButtonTitle))
     }
 
     func makeTransactionsSectionsState( _ transactions: [Transaction]) -> [TransactionsSectionState] {

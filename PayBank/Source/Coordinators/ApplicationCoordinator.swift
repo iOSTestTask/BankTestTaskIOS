@@ -38,6 +38,11 @@ extension ApplicationCoordinatorImp: MainCoordinatorOutput {
     func finishMainFlow(_ coordinator: MainCoordinator) {
         removeDependency(coordinator)
     }
+
+    func mainCoordinatorDidLogout(_ coordinator: MainCoordinator) {
+        removeDependency(coordinator)
+        runAuthFlow(false)
+    }
 }
 
 // MARK: - Private

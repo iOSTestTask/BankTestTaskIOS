@@ -27,6 +27,12 @@ extension TransactionsViewController: TransactionsViewInput {
     func setupInitialState(_ viewState: TransactionsViewControllerViewState) {
         tabBarItem.title = viewState.tabbarTitle
         title = viewState.navigationTitle
+
+        let logoutItem = UIBarButtonItem(title: viewState.logoutButtonTitle,
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(logoutTapped))
+        navigationItem.rightBarButtonItems = [logoutItem]
     }
 
     func setup(_ sectionsState: [TransactionsSectionState]) {
@@ -69,5 +75,9 @@ private extension TransactionsViewController {
             <<< NoResultRow(nil, { row in
                 row.value = cellState
             })
+    }
+
+    @objc func logoutTapped() {
+        output.viewOnLogoutTappedAction()
     }
 }

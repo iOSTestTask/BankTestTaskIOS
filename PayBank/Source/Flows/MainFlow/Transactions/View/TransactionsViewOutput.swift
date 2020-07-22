@@ -10,4 +10,6 @@ protocol TransactionsViewOutput {
 
     /// Notify presenter that view is ready
     func viewIsReady()
+
+    func viewOnLogoutTappedAction()
 }

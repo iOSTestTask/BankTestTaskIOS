@@ -9,7 +9,7 @@
 import Foundation
 
 struct Localizable {
-    
+
     private let string: String
     private let args: CVaListPointer
     private let locale: Locale?

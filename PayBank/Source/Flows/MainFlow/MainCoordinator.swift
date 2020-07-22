@@ -13,6 +13,8 @@ import UIKit
 protocol MainCoordinatorOutput: class {
 
     func finishMainFlow(_ coordinator: MainCoordinator)
+
+    func mainCoordinatorDidLogout(_ coordinator: MainCoordinator)
 }
 
 typealias MainCoordinator = Coordinator
@@ -42,6 +44,11 @@ final class MainCoordinatorImp: BaseCoordinator {
 extension MainCoordinatorImp: TransactionsCoordinatorOutput {
     func finishTransactionsFlow(_ coordinator: TransactionsCoordinator) {
         removeDependency(coordinator)
+    }
+
+    func transactionCoordinatorDidLogout(_ coordinator: TransactionsCoordinator) {
+        removeDependency(coordinator)
+        output.mainCoordinatorDidLogout(self)
     }
 }
 

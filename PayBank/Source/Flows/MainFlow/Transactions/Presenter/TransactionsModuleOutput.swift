@@ -6,4 +6,6 @@
 //  Copyright © 2020 NIX. All rights reserved.
 //
 
-protocol TransactionsModuleOutput: class {}
+protocol TransactionsModuleOutput: class {
+    func transactionsModuleDidLogout()
+}
