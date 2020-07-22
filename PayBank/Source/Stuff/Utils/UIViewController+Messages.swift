@@ -8,18 +8,13 @@
 
 import UIKit
 
-// FIXME: add showing messages
 extension UIViewController {
 
-    func show(error: String) {
-    }
-
-    func show(success: String) {
-    }
-
     func showOverNavigationBar(success: String) {
+        MessagesCoordinator.showOverNavigationBar(success: success)
     }
 
     func showOverNavigationBar(error: String) {
+        MessagesCoordinator.showOverNavigationBar(error: error)
     }
 }

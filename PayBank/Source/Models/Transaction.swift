@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 typealias Transactions = [Transaction]
 
@@ -24,15 +23,6 @@ struct Transaction: Codable {
     var category: String?
 
     var date: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case accountId = "account_id"
-        case amount
-        case vendor
-        case category
-        case date
-    }
 }
 
 // MARK: - Equatable

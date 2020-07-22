@@ -9,6 +9,7 @@
 import Foundation
 
 struct Localizable {
+    
     private let string: String
     private let args: CVaListPointer
     private let locale: Locale?
@@ -31,6 +32,7 @@ struct Localizable {
 }
 
 extension String {
+
     static func localized(_ key: Localizable) -> String {
         return key.contents
     }

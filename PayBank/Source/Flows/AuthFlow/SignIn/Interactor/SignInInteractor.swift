@@ -20,6 +20,7 @@ class SignInInteractor {
 
 // MARK: - SignInInteractorInput
 extension SignInInteractor: SignInInteractorInput {
+
     func updateEmail(_ email: String?) {
         self.email = email
     }
@@ -30,12 +31,6 @@ extension SignInInteractor: SignInInteractorInput {
 
     func login() {
 
-        #if DEBUG
-            email = StubData.email
-            password = StubData.password
-        #endif
-
-        // FIXME: add real validation
         guard
             let email = email, let password = password else { return }
 
@@ -54,6 +49,7 @@ extension SignInInteractor: SignInInteractorInput {
 
 // MARK: - Networking
 private extension SignInInteractor {
+
     func login(_ email: String, _ password: String) -> Promise<APIEmptyResult> {
         let request = LoginRequest(email: email, password: password)
         return apiClient.request(target: AuthentificationAPI.login(request))

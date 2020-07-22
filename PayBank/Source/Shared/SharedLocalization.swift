@@ -18,4 +18,9 @@ extension Localizable {
         Localizable(NSLocalizedString("--",
                                       comment: "Shared | No results | -- "))
     }
+
+    static var errorMessageTitle: Localizable {
+        Localizable(NSLocalizedString("Error",
+                                      comment: "Messages | Error | "))
+    }
 }

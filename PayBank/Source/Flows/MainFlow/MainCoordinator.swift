@@ -40,7 +40,7 @@ final class MainCoordinatorImp: BaseCoordinator {
 
 // MARK: - TransactionsCoordinatorOutput
 extension MainCoordinatorImp: TransactionsCoordinatorOutput {
-    func finisTransactionsFlow(_ coordinator: TransactionsCoordinator) {
+    func finishTransactionsFlow(_ coordinator: TransactionsCoordinator) {
         removeDependency(coordinator)
     }
 }

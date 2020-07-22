@@ -13,7 +13,7 @@ class TransactionsInteractor {
     weak var output: TransactionsInteractorOutput?
     var transactionAPIClient: APIClient<TransactionsAPI>!
     weak var timeFormatter: TimeFormatterService!
-    weak var sortingService: SortingService!
+    weak var sortingService: TransactionsSortingService!
 
     // MARK: - Private properties
     var transactions: [Transaction]?

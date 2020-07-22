@@ -57,18 +57,6 @@ extension SignUpInteractor: SignUpInteractorInput {
     }
 
     func signUp() {
-
-        #if DEBUG
-            email = StubData.email
-            password = StubData.password
-            firstName = StubData.firstName
-            lastName = StubData.lastName
-            phoneNumber = StubData.phone
-            dateOfBirth = StubData.dob
-            gender = StubData.gender
-        #endif
-
-        // FIXME: add real validation
         guard
             let email = email,
             let password = password,

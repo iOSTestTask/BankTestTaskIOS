@@ -35,6 +35,8 @@ final class MontlyCashExpensesCell: Cell<MontlyCashExpensesCellState>, CellType 
 
     override func setup() {
         height = { 60.0 }
+
+        // FIXME: add style for ui element
         super.setup()
     }
 

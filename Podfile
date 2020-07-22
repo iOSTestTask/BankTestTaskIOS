@@ -11,10 +11,9 @@ target 'PayBank' do
   pod 'CocoaDebug', :configurations => ['Debug']
 
   # Networking
-  pod 'Alamofire', '5.1.0'
-  pod 'ObjectMapper', '3.5.2'
   pod 'Moya', '14.0.0'
 
   # UI
   pod 'Eureka', '5.2.1'
+  pod 'SwiftMessages', '7.0.1'
 end

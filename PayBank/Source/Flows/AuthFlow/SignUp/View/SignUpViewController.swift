@@ -39,21 +39,42 @@ extension SignUpViewController: SignUpViewInput {
 // MARK: - Private
 // MARK: - Fill form
 private extension SignUpViewController {
+
+    func setupForm(_ viewState: SignUpViewControllerViewState) {
+
+        form.inlineRowHideOptions = InlineRowHideOptions.AnotherInlineRowIsShown.union(.FirstResponderChanges)
+
+        let requiredFieldsSection = Section()
+
+        addEmailRow(to: requiredFieldsSection, viewState)
+        addPasswordRow(to: requiredFieldsSection, viewState)
+        addFirstNameRow(to: requiredFieldsSection, viewState)
+        addLastNameRow(to: requiredFieldsSection, viewState)
+
+        let nonRequiredFieldsSection = Section()
+        addPhoneNameRow(to: nonRequiredFieldsSection, viewState)
+        addDateRow(to: nonRequiredFieldsSection, viewState)
+        addGenderRow(to: nonRequiredFieldsSection, viewState)
+
+        let buttonsSections = Section()
+        addSinUpRow(to: buttonsSections, viewState)
+        addCloseRow(to: buttonsSections, viewState)
+
+        form.append(contentsOf: [requiredFieldsSection, nonRequiredFieldsSection, buttonsSections])
+    }
+
+    // FIXME: Add custom cells and setup them with cell state
+    // FIXME: Replace validation rows with inline row
     func addEmailRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
         let emailRow = EmailRow() {
             $0.title = viewState.emailRow
             $0.add(rule: RuleRequired())
             $0.add(rule: RuleEmail())
             $0.validationOptions = .validatesOnDemand
+        }.cellUpdate { [unowned self] cell, row in
 
-            #if DEBUG
-                $0.value = StubData.email
-            #endif
-        }.cellUpdate { cell, row in
-            if !row.isValid {
-                cell.titleLabel?.textColor = .red
-            }
-        }.onRowValidationChanged {[weak self] cell, row in
+            self.output.viewDidEndFillingEmail(row.value)
+        }.onRowValidationChanged { cell, row in
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
@@ -63,13 +84,13 @@ private extension SignUpViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
+                    }.cellUpdate { cell, row in
+                        cell.textLabel?.textColor = .red
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
                 }
             }
-
-            self?.output.viewDidEndFillingEmail(row.value)
         }
 
         section.append(emailRow)
@@ -80,15 +101,11 @@ private extension SignUpViewController {
             $0.title = viewState.paswordRow
             $0.add(rule: RuleRequired())
             $0.add(rule: RuleMinLength(minLength: 6))
-            #if DEBUG
-                $0.value = StubData.password
-            #endif
             $0.validationOptions = .validatesOnDemand
-        }.cellUpdate { cell, row in
-            if !row.isValid {
-                cell.titleLabel?.textColor = .red
-            }
-        }.onRowValidationChanged { [weak self] cell, row in
+        }.cellUpdate { [unowned self] cell, row in
+
+            self.output.viewDidEndFillingPassword(row.value)
+        }.onRowValidationChanged { cell, row in
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
@@ -98,13 +115,13 @@ private extension SignUpViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
+                    }.cellUpdate { cell, row in
+                        cell.textLabel?.textColor = .red
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
                 }
             }
-
-            self?.output.viewDidEndFillingPassword(row.value)
         }
 
         section.append(passwordRow)
@@ -114,15 +131,11 @@ private extension SignUpViewController {
         let nameRow = NameRow() {
             $0.title = viewState.firstNameRow
             $0.add(rule: RuleRequired())
-            #if DEBUG
-                $0.value = StubData.firstName
-            #endif
             $0.validationOptions = .validatesOnDemand
-        }.cellUpdate { cell, row in
-            if !row.isValid {
-                cell.titleLabel?.textColor = .red
-            }
-        }.onRowValidationChanged { [weak self] cell, row in
+        }.cellUpdate { [unowned self] cell, row in
+
+            self.output.viewDidEndFillingFirstName(row.value)
+        }.onRowValidationChanged { cell, row in
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
@@ -132,13 +145,13 @@ private extension SignUpViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
+                    }.cellUpdate { cell, row in
+                        cell.textLabel?.textColor = .red
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
                 }
             }
-
-            self?.output.viewDidEndFillingFirstName(row.value)
         }
 
         section.append(nameRow)
@@ -148,15 +161,11 @@ private extension SignUpViewController {
         let nameRow = NameRow() {
             $0.title = viewState.lastNameRow
             $0.add(rule: RuleRequired())
-            #if DEBUG
-                $0.value = StubData.lastName
-            #endif
             $0.validationOptions = .validatesOnDemand
-        }.cellUpdate { cell, row in
-            if !row.isValid {
-                cell.titleLabel?.textColor = .red
-            }
-        }.onRowValidationChanged { [weak self] cell, row in
+        }.cellUpdate { [unowned self] cell, row in
+
+            self.output.viewDidEndFillingLastName(row.value)
+        }.onRowValidationChanged {cell, row in
             let rowIndex = row.indexPath!.row
             while row.section!.count > rowIndex + 1 && row.section?[rowIndex + 1] is LabelRow {
                 row.section?.remove(at: rowIndex + 1)
@@ -166,13 +175,13 @@ private extension SignUpViewController {
                     let labelRow = LabelRow() {
                         $0.title = validationMsg
                         $0.cell.height = { 40 }
+                    }.cellUpdate { cell, row in
+                        cell.textLabel?.textColor = .red
                     }
                     let indexPath = row.indexPath!.row + index + 1
                     row.section?.insert(labelRow, at: indexPath)
                 }
             }
-
-            self?.output.viewDidEndFillingLastName(row.value)
         }
 
         section.append(nameRow)
@@ -181,50 +190,34 @@ private extension SignUpViewController {
     func addPhoneNameRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
         let phoneRow = PhoneRow() {
             $0.title = viewState.phoneRow
-            #if DEBUG
-                $0.value = StubData.phone
-            #endif
             $0.validationOptions = .validatesOnDemand
         }.cellUpdate { [unowned self] cell, row in
-            if row.isValid {
-                self.output.viewDidEndFillingPhoneNumber(row.value)
-            }
+            self.output.viewDidEndFillingPhoneNumber(row.value)
         }
 
         section.append(phoneRow)
     }
 
     func addDateRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
-        let phoneRow = DateRow() {
+        let phoneRow = DateInlineRow() {
             $0.title = viewState.dateOfBirth
-            #if DEBUG
-                $0.value = StubData.dob
-            #endif
             $0.validationOptions = .validatesOnDemand
         }.cellUpdate { [unowned self] cell, row in
-            if row.isValid {
-                self.output.viewDidEndFillingDate(row.value)
-            }
+            self.output.viewDidEndFillingDate(row.value)
         }
 
         section.append(phoneRow)
     }
 
     func addGenderRow(to section: Section, _ viewState: SignUpViewControllerViewState) {
-        let genderRow = SegmentedRow<String>(viewState.genderTitle) {
-            $0.options = viewState.genderOptions
-            #if DEBUG
-                $0.value = StubData.gender.rawValue
-            #else
-                $0.value = viewState.genderDefaultOption
-            #endif
-
-        }.onCellSelection { (cell, row) in
-            if let value = row.value, let gender = Gender.init(rawValue: value) {
-                self.output.viewDidFillingGender(gender)
-            }
+        let genderRow = PickerInlineRow<String>() {
+            $0.title = viewState.genderTitle
+            $0.options = viewState.genderOptions ?? []
+        }.cellUpdate { [unowned self] cell, row in
+            guard
+                let value = row.value, let gender = Gender(rawValue: value) else { return }
+            self.output.viewDidFillingGender(gender)
         }
-
         section.append(genderRow)
     }
 
@@ -255,25 +248,5 @@ private extension SignUpViewController {
         }
 
         section.append(signUpRow)
-    }
-
-    func setupForm(_ viewState: SignUpViewControllerViewState) {
-        let requiredFieldsSection = Section()
-
-        addEmailRow(to: requiredFieldsSection, viewState)
-        addPasswordRow(to: requiredFieldsSection, viewState)
-        addFirstNameRow(to: requiredFieldsSection, viewState)
-        addLastNameRow(to: requiredFieldsSection, viewState)
-
-        let nonRequiredFieldsSection = Section()
-        addPhoneNameRow(to: nonRequiredFieldsSection, viewState)
-        addDateRow(to: nonRequiredFieldsSection, viewState)
-        addGenderRow(to: nonRequiredFieldsSection, viewState)
-
-        let buttonsSections = Section()
-        addSinUpRow(to: buttonsSections, viewState)
-        addCloseRow(to: buttonsSections, viewState)
-
-        form.append(contentsOf: [requiredFieldsSection, nonRequiredFieldsSection, buttonsSections])
     }
 }

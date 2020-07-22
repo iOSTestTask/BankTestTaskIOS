@@ -11,7 +11,7 @@ import Swinject
 
 protocol TransactionsCoordinatorOutput: class {
 
-    func finisTransactionsFlow(_ coordinator: TransactionsCoordinator)
+    func finishTransactionsFlow(_ coordinator: TransactionsCoordinator)
 }
 
 typealias TransactionsCoordinator = Coordinator

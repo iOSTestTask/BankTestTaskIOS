@@ -12,7 +12,7 @@ class DashboardInteractor {
 
     var transactionAPIClient: APIClient<TransactionsAPI>!
     weak var timeFormatter: TimeFormatterService!
-    weak var sortingService: SortingService!
+    weak var sortingService: TransactionsSortingService!
 
     // MARK: - Private properties
     var montlyCashExpenses: [MonthlyCashExpense]?
@@ -66,7 +66,7 @@ private extension DashboardInteractor {
 
             let originalDate = timeFormatter.makeDate(from: transaction.date) ?? Date()
             let components = Calendar.current.dateComponents([.year, .month], from: originalDate)
-            let date = Calendar.current.date(from: components)!
+            let date = Calendar.current.date(from: components) ?? Date()
             let existing = values[date] ?? []
             values[date] = existing + [transaction]
         }

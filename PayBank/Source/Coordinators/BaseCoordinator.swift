@@ -40,6 +40,6 @@ class BaseCoordinator: NSObject, Coordinator {
 
     // MARK: - Coordinator
     func start(animated: Bool) {
-          fatalError("start(animated:) has not been implemented")
+        fatalError("start(animated:) has not been implemented")
     }
 }

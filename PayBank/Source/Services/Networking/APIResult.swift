@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 // MARK: - APICustomError
 struct APICustomError: Decodable {
@@ -17,5 +16,3 @@ struct APICustomError: Decodable {
 
 // MARK: - APIEmptyResulst
 struct APIEmptyResult: Codable {}
-
-// FIXME: Add class for collections

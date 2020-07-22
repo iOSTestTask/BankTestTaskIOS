@@ -20,13 +20,11 @@ protocol TimeFormatterService: class {
 }
 
 final class TimeFormatterServiceImp: NSObject {
-    let dateFormatter: DateFormatter!
-    let dateComponentsFormatter: DateComponentsFormatter!
-    private let divisionCoeficient: Double = 1_000.0
+
+    private let dateFormatter: DateFormatter!
 
     override init() {
         self.dateFormatter = DateFormatter()
-        self.dateComponentsFormatter = DateComponentsFormatter()
         super.init()
     }
 }

@@ -48,7 +48,7 @@ class DashboardModuleAssembly: Assembly {
             interactor.output = presenter
             interactor.transactionAPIClient = apiClient
             interactor.timeFormatter = resolver.resolve(TimeFormatterService.self)
-            interactor.sortingService = resolver.resolve(SortingService.self)
+            interactor.sortingService = resolver.resolve(TransactionsSortingService.self)
 
             return interactor
         }

@@ -9,21 +9,20 @@
 import Foundation
 import Moya
 import PromiseKit
-import ObjectMapper
 
 struct APIClient<Target: TargetTypeExtension> {
 
     // MARK: - Private Properies
-
     private let moyaProvider: MoyaProvider<Target>
 
     init() {
         self.moyaProvider = MoyaProvider<Target>()
     }
 
+    // MARK: - Public methods
     func request<Result: Codable>(target: Target,
                                   handleCancellable: ((Cancellable) -> Void)? = nil) -> Promise<Result> {
-        return Promise<Result> {seal in
+        return Promise<Result> { seal in
 
             var isTimedOut = false
             let cancellable = self.moyaProvider.request(target) { result in
@@ -36,7 +35,7 @@ struct APIClient<Target: TargetTypeExtension> {
                 switch result {
                 case .success(let response):
                     do {
-                        let result = try JSONDecoder().decode(Result.self, from: response.data)
+                        let result = try Result.decode(from: response.data)
                         seal.fulfill(result)
                     } catch {
                       seal.reject(APIError.couldNotParseResponce)

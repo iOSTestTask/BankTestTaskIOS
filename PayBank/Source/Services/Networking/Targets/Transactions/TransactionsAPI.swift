@@ -10,10 +10,12 @@ import Foundation
 import Moya
 
 enum TransactionsAPI {
+
     case fetch // fetch list of transactions from http://localhost:3000/transactions
 }
 
 extension TransactionsAPI: TargetTypeExtension {
+
     var baseURL: URL {
         guard
             let baseURL = URL(string: "http://\(APIDomain.api.rawValue)\(APIDomain.port.rawValue)/") else {

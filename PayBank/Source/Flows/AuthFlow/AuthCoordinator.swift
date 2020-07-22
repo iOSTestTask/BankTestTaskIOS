@@ -30,6 +30,7 @@ final class AuthCoordinatorImp: BaseCoordinator {
 }
 
 extension AuthCoordinatorImp: SignInModuleOutput {
+
     func signInModuleDidTapOnSignUp() {
         runSignUpFlow(animated: true)
     }
@@ -63,7 +64,6 @@ private extension AuthCoordinatorImp {
     }
 
     func runSignUpFlow(animated: Bool) {
-
         guard
              let view = resolver.resolve((SignUpViewController).self, argument: self as SignUpModuleOutput) else {
                  assertionFailure("Failed to resolve \(SignUpViewController.self) and \(SignUpModuleOutput.self)")

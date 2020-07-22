@@ -10,11 +10,14 @@ import Foundation
 import Moya
 
 enum AuthentificationAPI {
+
     case login(LoginRequest) // login http://localhost:3000/authenticate
+
     case signUp(SignUpRequest) // signUp http://localhost:3000/customers
 }
 
 extension AuthentificationAPI: TargetTypeExtension {
+
     var baseURL: URL {
         guard
             let baseURL = URL(string: "http://\(APIDomain.api.rawValue)\(APIDomain.port.rawValue)/") else {
@@ -44,18 +47,17 @@ extension AuthentificationAPI: TargetTypeExtension {
 
     var task: Moya.Task {
         switch self {
-        case .login(let request as Encodable):
+        case .login(let request as Encodable),
+             .signUp(let request as Encodable):
             return .requestParameters(parameters: request.toDictionary(), encoding: JSONEncoding.default)
-        case .signUp(let request as Encodable):
-        return .requestParameters( parameters: request.toDictionary(), encoding: JSONEncoding.default)
+        }
     }
-}
 
-var validationType: ValidationType {
-    return .successCodes
-}
+    var validationType: ValidationType {
+        return .successCodes
+    }
 
-var headers: [String: String]? {
-    return nil
-}
+    var headers: [String: String]? {
+        return nil
+    }
 }

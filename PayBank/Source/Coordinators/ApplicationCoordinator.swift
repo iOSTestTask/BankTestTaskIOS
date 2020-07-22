@@ -26,6 +26,7 @@ final class ApplicationCoordinatorImp: BaseCoordinator {
 }
 
 extension ApplicationCoordinatorImp: AuthCoordinatorOutput {
+
     func finishAuthFlow(_ coordinator: AuthCoordinator) {
         removeDependency(coordinator)
         runMainFlow(false)
@@ -33,6 +34,7 @@ extension ApplicationCoordinatorImp: AuthCoordinatorOutput {
 }
 
 extension ApplicationCoordinatorImp: MainCoordinatorOutput {
+
     func finishMainFlow(_ coordinator: MainCoordinator) {
         removeDependency(coordinator)
     }
@@ -40,6 +42,7 @@ extension ApplicationCoordinatorImp: MainCoordinatorOutput {
 
 // MARK: - Private
 private extension ApplicationCoordinatorImp {
+
     func runFlow(_ mode: LaunchMode, _ animated: Bool) {
         switch mode {
         case .auth:

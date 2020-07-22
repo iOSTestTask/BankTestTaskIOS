@@ -31,8 +31,8 @@ final class ServicesAssembly: Assembly {
         }.inObjectScope(.container)
 
         // sorting
-        container.register(SortingService.self) { _ in
-            SortingServiceImp()
+        container.register(TransactionsSortingService.self) { _ in
+            TransactionsSortingServiceImp()
         }.inObjectScope(.container)
     }
 }

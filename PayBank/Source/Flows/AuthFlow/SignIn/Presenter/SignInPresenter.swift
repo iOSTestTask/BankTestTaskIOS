@@ -21,24 +21,22 @@ extension SignInPresenter: SignInModuleInput {}
 extension SignInPresenter: SignInViewOutput {
 
     func viewIsReady() {
-
         let initionalViewState = makeInitionalViewState()
         view.setupInitialState(initionalViewState)
     }
 
     func viewDidEndFillingEmail(_ email: String?) {
-        //FIXME: add real validation and update data only for valid value
         interactor.updateEmail(email)
     }
 
     func viewDidEndFillingPassword(_ password: String?) {
-        //FIXME: add real validation and update data only for valid value
         interactor.updatePassword(password)
     }
 }
 
 // MARK: - SignInInteractorOutput
 extension SignInPresenter: SignInInteractorOutput {
+
     func interactorDidLogin() {
         output.signInModuleDidLogin()
     }
@@ -50,8 +48,8 @@ extension SignInPresenter: SignInInteractorOutput {
 
 // MARK: - View States
 private extension SignInPresenter {
-    func makeInitionalViewState() -> SignInViewControllerViewState {
 
+    func makeInitionalViewState() -> SignInViewControllerViewState {
         return SignInViewControllerViewState(emailRow: .localized(.signInEmailTitle),
                                              paswordRow: .localized(.signInPasswordTitle),
                                              signInButtonTitle: .localized(.signInButtonTitle),
@@ -63,8 +61,8 @@ private extension SignInPresenter {
 
 // MARK: - Actions
 private extension SignInPresenter {
+
     func onSignInTap() {
-        //FIXME: add real validation and make sign in only if it avaliable
         interactor.login()
     }
 
